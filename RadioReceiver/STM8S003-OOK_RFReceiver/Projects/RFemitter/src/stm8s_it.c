@@ -29,7 +29,10 @@
 
 
 // ===== RF Receive =====
-#define RF_MIDDLEBIT    (u16)560  // 447 674
+#define RF_START_PULSE_MIN (u16)1150
+#define RF_START_PULSE_MAX (u16)1350
+#define RF_BITPERIOD_MAX   (u16)1000
+#define RF_MIDDLEBIT    (u16)638
 #define RF_RCVTIMEOUT   (u8)100
 #define RFSYNCVAL       (u16)0x81B3
 #define RFRECORDLEN     (u8)30
@@ -299,13 +302,12 @@ INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12)
     {
       case RF_RCVSTATE_WAITSTART: 
       {
-        // wait for a start pulse (4ms)
-        if(RF_PulsePeriod > (u16)1014 && RF_PulsePeriod < (u16)1191)
+        // wait for a start pulse (1.25ms)
+        if(RF_PulsePeriod > RF_START_PULSE_MIN && RF_PulsePeriod < RF_START_PULSE_MAX)
         {
           RF_bits = 0;
           RF_bytes = 0;
           RF_data = 0;
-          //FLAG_RF_START_REC = TRUE;
           RF_rcvState = RF_RCVSTATE_REC8BITS;
         }
         break;
@@ -313,7 +315,7 @@ INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12)
       case RF_RCVSTATE_REC8BITS:
       {
         // now we had a start pulse, record 8 bits
-        if(RF_PulsePeriod >= 1014) 
+        if(RF_PulsePeriod >= RF_BITPERIOD_MAX) 
         {
           // unexpected start pulse, reset data recording
           RF_bits = 0;

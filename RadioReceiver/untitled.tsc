@@ -1,5 +1,5 @@
 #STM Touch Studio user settings - do not edit
-#Sat Jun 20 14:04:18 AST 2015
+#Sun Jun 21 00:36:30 AST 2015
 ExprVariable.Col0ModelIdx=0
 ExprVariable.Col0Width=15
 ExprVariable.Col1ModelIdx=1
@@ -11,7 +11,7 @@ ExprVariable.Col3Width=91
 ExprVariable.Col4ModelIdx=4
 ExprVariable.Col4Width=40
 ExprVariable.Number=0
-GdbVar.ExecDate=1434798037638
+GdbVar.ExecDate=1434836144505
 GdbVar.LastExecRelative=STM8S003-OOK_RFReceiver\\Projects\\RFemitter\\STVD\\Cosmic\\Debug\\RFemitter.elf
 GdbVar.Version=1
 GeneralPurpose.HorizontalSplit=350
@@ -93,10 +93,10 @@ VarViewer.SelectedTab=2
 VarViewer.ShowIndex=false
 VarViewer.Version=4
 VarViewer1.DisplayMode=Bargraph
-VarViewer1.Hexa=true
+VarViewer1.Hexa=false
 VarViewer1.Name=VarViewer1
 VarViewer1.Range.Low=0.0
-VarViewer1.Range.Up=712.0
+VarViewer1.Range.Up=810.0
 VarViewer1.SecondScreen=false
 VarViewer1.Var.Nb=34
 VarViewer1.Var0.Name=temp2[0]

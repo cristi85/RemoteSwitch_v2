@@ -364,7 +364,7 @@ PathName=..\..\src\stm8s_it.c
 [Root.Include Files]
 ElemType=Folder
 PathName=Include Files
-Child=Root.Include Files...\..\src\hd44780.h
+Child=Root.Include Files...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_wwdg.h
 Config.0=Root.Include Files.Config.0
 Config.1=Root.Include Files.Config.1
 
@@ -434,6 +434,16 @@ String.4.0=
 String.5.0=
 String.6.0=2011,11,23,14,32,47
 
+[Root.Include Files...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_wwdg.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_wwdg.h
+Next=Root.Include Files...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_adc2.h
+
+[Root.Include Files...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_adc2.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_adc2.h
+Next=Root.Include Files...\..\src\hd44780.h
+
 [Root.Include Files...\..\src\hd44780.h]
 ElemType=File
 PathName=..\..\src\hd44780.h
@@ -447,11 +457,6 @@ Next=Root.Include Files...\..\src\timeout.h
 [Root.Include Files...\..\src\timeout.h]
 ElemType=File
 PathName=..\..\src\timeout.h
-Next=Root.Include Files...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim6.h
-
-[Root.Include Files...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim6.h]
-ElemType=File
-PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim6.h
 Next=Root.Include Files...\..\src\board.h
 
 [Root.Include Files...\..\src\board.h]
@@ -482,7 +487,102 @@ Next=Root.Include Files.Include Files\FWLib
 [Root.Include Files.Include Files\FWLib]
 ElemType=Folder
 PathName=Include Files\FWLib
-Child=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h
+Child=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart3.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart3.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart3.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart2.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart2.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart2.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim5.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim5.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim5.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim4.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim4.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim4.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim3.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim3.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim3.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim2.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim2.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim2.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim1.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim1.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim1.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_spi.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_spi.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_spi.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_rst.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_rst.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_rst.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_iwdg.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_iwdg.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_iwdg.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_itc.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_itc.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_itc.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_i2c.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_i2c.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_i2c.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_flash.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_flash.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_flash.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_exti.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_exti.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_exti.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_can.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_can.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_can.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_beep.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_beep.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_beep.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_awu.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_awu.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_awu.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim6.h
+
+[Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim6.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_tim6.h
+Next=Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h
 
 [Root.Include Files.Include Files\FWLib...\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h]
 ElemType=File

@@ -12,6 +12,10 @@ void Config()
   CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV1);
   CLK_FastHaltWakeUpCmd(ENABLE);                       //this automatically selects the HSI clock as master clock after MCU wakeup from Halt or Active-halt
   
+  CLK_AdjustHSICalibrationValue(CLK_HSITRIMVALUE_7);  
+  CLK_CCOConfig(CLK_OUTPUT_CPUDIV64);  // 125.5KHz
+  CLK_CCOCmd(ENABLE);
+  
   /* Enable peripheral clock */
   CLK_PeripheralClockConfig(CLK_PERIPHERAL_TIMER4, ENABLE);   /* 8bit: timeouts */
   CLK_PeripheralClockConfig(CLK_PERIPHERAL_TIMER2, ENABLE);   /* delay_10us */
@@ -61,7 +65,7 @@ void Config()
      on the following falling edge of input we make a capture
   */
   TIM1_DeInit();
-  TIM1_TimeBaseInit(8, TIM1_COUNTERMODE_UP, 4000, 0x00);    // 4ms overflow period, 1us resolution                                                        
+  TIM1_TimeBaseInit(7, TIM1_COUNTERMODE_UP, 4000, 0x00);    // 4ms overflow period, 1us resolution                                                        
   TIM1->SMCR |= 0x04;                                        // Slave mode control register
                                                              // Clock/trigger/slave mode selection, SMS = 100
                                                              // 100: Reset mode - Rising edge of the selected trigger signal (TRGI) re-initializes the counter and
