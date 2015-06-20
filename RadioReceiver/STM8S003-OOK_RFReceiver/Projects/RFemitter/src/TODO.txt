@@ -1,0 +1,15 @@
+Read with ADC KL30 voltage, if less than 10V, do not turn on signals
+- done, test result:
+
+Calibrate delays
+- 
+
+Implement USART receive timeout
+- done, test result:
+
+Test MCU sleep/wake conditions
+ - 
+
+Implement Watchdog
+
+Update WWD in delay functions
