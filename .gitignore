@@ -4,6 +4,9 @@
 *.obj
 *.elf
 
+# Generated assembly code files
+*.ls
+
 # Precompiled Headers
 *.gch
 *.pch
