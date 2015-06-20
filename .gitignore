@@ -4,8 +4,9 @@
 *.obj
 *.elf
 
-# Generated assembly code files
+# Cosmic compiler specific files
 *.ls
+*.sm8
 
 # Precompiled Headers
 *.gch
