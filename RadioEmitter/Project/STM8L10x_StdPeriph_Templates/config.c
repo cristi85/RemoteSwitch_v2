@@ -24,6 +24,19 @@ void Config()
   TIM2_ITConfig(TIM2_IT_Update, ENABLE);
   TIM2_Cmd(ENABLE);
   
+   // Timer 3 Configuration
+  CLK_PeripheralClockConfig(CLK_Peripheral_TIM3, ENABLE);   // 8bit: used for delay calculation, IDD(TIM4) = 3uA/MHz
+  TIM3_TimeBaseInit(TIM3_Prescaler_2, TIM3_CounterMode_Up, 700); // 1MHz timer clock
+  TIM3_OC1Init(TIM3_OCMode_PWM1,
+               TIM3_OutputState_Enable,
+               350,
+               TIM3_OCPolarity_Low,
+               TIM3_OCIdleState_Reset);
+  TIM3_ARRPreloadConfig(ENABLE);
+  TIM3_OC1PreloadConfig(ENABLE);
+  TIM3_CtrlPWMOutputs(ENABLE);
+  TIM3_Cmd(DISABLE);
+  
   /* Output PP High - bicolor LED to GND */
   GPIO_Init(LED_PORT, LED_PIN1, GPIO_Mode_Out_PP_Low_Slow);
   GPIO_Init(LED_PORT, LED_PIN2, GPIO_Mode_Out_PP_Low_Slow);

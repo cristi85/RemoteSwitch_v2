@@ -64,6 +64,7 @@ Debug\stm8l10x_iwdg.o
 Debug\stm8l10x_rst.o
 Debug\stm8l10x_spi.o
 Debug\stm8l10x_tim2.o
+Debug\stm8l10x_tim3.o
 Debug\stm8l10x_tim4.o
 #<END OBJECT_FILES>
 

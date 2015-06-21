@@ -34,8 +34,8 @@
 
     /* ====== RF Emitter ====== */
     // MISO - digital OUTPUT
-    #define RF_OUT_PORT  GPIOB 
-    #define RF_OUT_PIN   GPIO_Pin_7
+    #define RF_OUT_PORT  GPIOB     // PB1 - TIM3_CH1; PD0 - TIM3_CH2
+    #define RF_OUT_PIN   GPIO_Pin_1
   
     #define RF_OUT(x)      (x==(u8)0 ? (RF_OUT_PORT->ODR   &= (~RF_OUT_PIN))   : (RF_OUT_PORT->ODR   |= RF_OUT_PIN))
     /* ======END NRF24L01+====== */

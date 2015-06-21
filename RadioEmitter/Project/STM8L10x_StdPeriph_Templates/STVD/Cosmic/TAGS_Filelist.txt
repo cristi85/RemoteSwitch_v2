@@ -21,6 +21,7 @@ stm8_interrupt_vector.c
 ..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_rst.c
 ..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_spi.c
 ..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim2.c
+..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c
 ..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim4.c
 ..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h
 ..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_awu.h

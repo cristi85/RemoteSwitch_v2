@@ -167,7 +167,6 @@ CNTRL	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	914;"	membe
 CNTVAL_1000MS	..\..\stm8l10x_it.c	42;"	macro	file:
 CNTVAL_250MS	..\..\stm8l10x_it.c	36;"	macro	file:
 CNTVAL_500MS	..\..\stm8l10x_it.c	39;"	macro	file:
-CODE	..\..\rf_send.c	5;"	macro	file:
 COMP	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1299;"	macro
 COMP_BaseAddress	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1246;"	macro
 COMP_CCS_COMP1CH1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	418;"	macro
@@ -291,21 +290,11 @@ ClrBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1394;"	mac
 Config	..\..\config.c	3;"	function
 Config	..\..\config.h	4;"	prototype	signature:(void)
 DDR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	190;"	member	struct:GPIO_struct
-DELAY_100US	..\..\delay.h	26;"	macro
-DELAY_10US	..\..\delay.h	12;"	macro
-DELAY_15US	..\..\delay.h	13;"	macro
-DELAY_350US	..\..\delay.h	25;"	macro
-DELAY_400US	..\..\delay.h	24;"	macro
-DELAY_410US	..\..\delay.h	8;"	macro
-DELAY_480US	..\..\delay.h	6;"	macro
-DELAY_55US	..\..\delay.h	15;"	macro
-DELAY_60US	..\..\delay.h	11;"	macro
-DELAY_64US	..\..\delay.h	10;"	macro
-DELAY_6US	..\..\delay.h	9;"	macro
-DELAY_70US	..\..\delay.h	7;"	macro
-DELAY_850US	..\..\delay.h	23;"	macro
-DELAY_9US	..\..\delay.h	14;"	macro
-DELAY_US	..\..\delay.h	31;"	macro
+DELAY_100US	..\..\delay.h	10;"	macro
+DELAY_350US	..\..\delay.h	9;"	macro
+DELAY_400US	..\..\delay.h	8;"	macro
+DELAY_850US	..\..\delay.h	7;"	macro
+DELAY_US	..\..\delay.h	15;"	macro
 DIG_IN_DEB_TIME	..\..\stm8l10x_it.c	48;"	macro	file:
 DISABLE	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	155;"	enumerator	enum:__anon9
 DM	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1298;"	macro
@@ -638,7 +627,6 @@ I2C_CheckEvent	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_i2c.
 I2C_ClearFlag	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_i2c.h	620;"	prototype	signature:(I2C_FLAG_TypeDef I2C_FLAG)
 I2C_ClearITPendingBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_i2c.h	622;"	prototype	signature:(I2C_IT_TypeDef I2C_IT)
 I2C_Cmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_i2c.h	504;"	prototype	signature:(FunctionalState NewState)
-I2C_DELAY	..\..\delay.h	17;"	macro
 I2C_DR_DR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	606;"	macro
 I2C_DR_RESET_VALUE	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	570;"	macro
 I2C_DeInit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_i2c.h	498;"	prototype	signature:(void)
@@ -1095,14 +1083,16 @@ RESERVED3	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	329;"	m
 RESET	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	153;"	enumerator	enum:__anon8
 RFCMD_CLOSEDOORS	..\..\rf_send.h	11;"	enumerator	enum:__anon4
 RFCMD_OPENDOORS	..\..\rf_send.h	10;"	enumerator	enum:__anon4
-RFPULSE	..\..\rf_send.c	10;"	function	signature:(u16 LOW, u16 HIGH)
-RFREMOTEID	..\..\rf_send.h	7;"	macro
+RFNODEID	..\..\rf_send.h	7;"	macro
+RFNodeId	..\..\rf_send.h	19;"	member	struct:__anon5::__anon6
+RFPULSE	..\..\rf_send.c	9;"	function	signature:(u16 LOW, u16 HIGH)
 RFSEND_DATALEN	..\..\rf_send.h	6;"	macro
+RFSYNCVAL	..\..\rf_send.c	5;"	macro	file:
 RF_Cmd_TypeDef	..\..\rf_send.h	12;"	typedef	typeref:enum:__anon4
 RF_OUT	..\..\board.h	40;"	macro
 RF_OUT_PIN	..\..\board.h	38;"	macro
 RF_OUT_PORT	..\..\board.h	37;"	macro
-RF_Send	..\..\rf_send.c	18;"	function	signature:(RF_Cmd_TypeDef RFcmd)
+RF_Send	..\..\rf_send.c	17;"	function	signature:(RF_Cmd_TypeDef RFcmd)
 RF_Send	..\..\rf_send.h	26;"	prototype	signature:(RF_Cmd_TypeDef RF_cmd)
 RFcmd	..\..\rf_send.h	20;"	member	struct:__anon5::__anon6
 RFmsg	..\..\rf_send.c	6;"	variable	file:
@@ -1110,8 +1100,7 @@ RFmsgCHKSUM	..\..\rf_send.h	21;"	member	struct:__anon5::__anon6
 RFmsg_t	..\..\rf_send.h	24;"	typedef	typeref:union:__anon5
 RFmsgarray	..\..\rf_send.h	23;"	member	union:__anon5
 RFmsgmember	..\..\rf_send.h	22;"	member	union:__anon5	typeref:struct:__anon5::__anon6
-RFremoteID	..\..\rf_send.h	19;"	member	struct:__anon5::__anon6
-RFseccode	..\..\rf_send.h	18;"	member	struct:__anon5::__anon6
+RFsyncValue	..\..\rf_send.h	18;"	member	struct:__anon5::__anon6
 RLR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	716;"	member	struct:IWDG_struct
 RST	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1283;"	macro
 RST_BaseAddress	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1252;"	macro
@@ -1142,7 +1131,6 @@ S32_MAX	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	167;"	mac
 S32_MIN	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	168;"	macro
 S8_MAX	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	161;"	macro
 S8_MIN	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	162;"	macro
-SCL_SDA_DELAY	..\..\delay.h	18;"	macro
 SET	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	153;"	enumerator	enum:__anon8
 SMCR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1078;"	member	struct:TIM4_struct
 SMCR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	904;"	member	struct:TIM_struct
@@ -1178,7 +1166,6 @@ SPI_CR2_RESET_VALUE	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x
 SPI_CR2_RXONLY	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	875;"	macro
 SPI_CR2_SSI	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	877;"	macro
 SPI_CR2_SSM	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	876;"	macro
-SPI_CS_LOW_DELAY	..\..\delay.h	20;"	macro
 SPI_ClearFlag	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_spi.h	269;"	prototype	signature:(void)
 SPI_ClearFlag	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_spi.c	306;"	function	signature:(void)
 SPI_ClearITPendingBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_spi.h	270;"	prototype	signature:(void)
@@ -1273,16 +1260,20 @@ SetBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1393;"	mac
 States	..\..\main.c	72;"	enum	file:
 StatesType	..\..\main.c	80;"	typedef	typeref:enum:States	file:
 TASK_1000ms	..\..\main.c	101;"	prototype	file:	signature:(void)
-TASK_1000ms	..\..\main.c	207;"	function
+TASK_1000ms	..\..\main.c	215;"	function
 TASK_250ms	..\..\main.c	103;"	prototype	file:	signature:(void)
-TASK_250ms	..\..\main.c	217;"	function
+TASK_250ms	..\..\main.c	225;"	function
 TASK_500ms	..\..\main.c	102;"	prototype	file:	signature:(void)
-TASK_500ms	..\..\main.c	212;"	function
+TASK_500ms	..\..\main.c	220;"	function
 TBR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	215;"	member	struct:AWU_struct
 TI1_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim2.c	1675;"	function	file:	signature:(TIM2_ICPolarity_TypeDef TIM2_ICPolarity, \ TIM2_ICSelection_TypeDef TIM2_ICSelection, \ uint8_t TIM2_ICFilter)
 TI1_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim2.c	44;"	prototype	file:	signature:(TIM2_ICPolarity_TypeDef TIM2_ICPolarity, TIM2_ICSelection_TypeDef TIM2_ICSelection, uint8_t TIM2_ICFilter)
+TI1_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1703;"	function	file:	signature:(TIM3_ICPolarity_TypeDef TIM3_ICPolarity, TIM3_ICSelection_TypeDef TIM3_ICSelection, uint8_t TIM3_ICFilter)
+TI1_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	46;"	prototype	file:	signature:(TIM3_ICPolarity_TypeDef TIM3_ICPolarity, TIM3_ICSelection_TypeDef TIM3_ICSelection, uint8_t TIM3_ICFilter)
 TI2_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim2.c	1726;"	function	file:	signature:(TIM2_ICPolarity_TypeDef TIM2_ICPolarity, TIM2_ICSelection_TypeDef TIM2_ICSelection, uint8_t TIM2_ICFilter)
 TI2_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim2.c	48;"	prototype	file:	signature:(TIM2_ICPolarity_TypeDef TIM2_ICPolarity, TIM2_ICSelection_TypeDef TIM2_ICSelection, uint8_t TIM2_ICFilter)
+TI2_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1754;"	function	file:	signature:(TIM3_ICPolarity_TypeDef TIM3_ICPolarity, TIM3_ICSelection_TypeDef TIM3_ICSelection, uint8_t TIM3_ICFilter)
+TI2_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	50;"	prototype	file:	signature:(TIM3_ICPolarity_TypeDef TIM3_ICPolarity, TIM3_ICSelection_TypeDef TIM3_ICSelection, uint8_t TIM3_ICFilter)
 TIM2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1292;"	macro
 TIM2_ARRPreloadConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim2.h	711;"	prototype	signature:(FunctionalState Newstate)
 TIM2_ARRPreloadConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim2.c	1109;"	function	signature:(FunctionalState NewState)
@@ -1529,10 +1520,12 @@ TIM2_UpdateSource_Regular	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\st
 TIM2_UpdateSource_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim2.h	311;"	typedef	typeref:enum:__anon85
 TIM3	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1293;"	macro
 TIM3_ARRPreloadConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	714;"	prototype	signature:(FunctionalState Newstate)
+TIM3_ARRPreloadConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1128;"	function	signature:(FunctionalState NewState)
 TIM3_AutomaticOutput_Disable	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	155;"	enumerator	enum:__anon99
 TIM3_AutomaticOutput_Enable	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	154;"	enumerator	enum:__anon99
 TIM3_AutomaticOutput_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	156;"	typedef	typeref:enum:__anon99
 TIM3_BKRConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	664;"	prototype	signature:(TIM3_OSSIState_TypeDef TIM3_OSSIState, TIM3_LockLevel_TypeDef TIM3_LockLevel, TIM3_BreakState_TypeDef TIM3_BreakState, TIM3_BreakPolarity_TypeDef TIM3_BreakPolarity, TIM3_AutomaticOutput_TypeDef TIM3_AutomaticOutput)
+TIM3_BKRConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	350;"	function	signature:(TIM3_OSSIState_TypeDef TIM3_OSSIState, TIM3_LockLevel_TypeDef TIM3_LockLevel, TIM3_BreakState_TypeDef TIM3_BreakState, TIM3_BreakPolarity_TypeDef TIM3_BreakPolarity, TIM3_AutomaticOutput_TypeDef TIM3_AutomaticOutput)
 TIM3_BaseAddress	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1241;"	macro
 TIM3_BreakPolarity_High	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	144;"	enumerator	enum:__anon98
 TIM3_BreakPolarity_Low	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	145;"	enumerator	enum:__anon98
@@ -1543,13 +1536,18 @@ TIM3_BreakState_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8
 TIM3_CAP_IRQHandler	..\..\stm8l10x_it.h	81;"	prototype	signature:(void)
 TIM3_CAP_IRQn	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_itc.h	63;"	enumerator	enum:__anon45
 TIM3_CCxCmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	722;"	prototype	signature:(TIM3_Channel_TypeDef TIM3_Channel, FunctionalState Newstate)
+TIM3_CCxCmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1310;"	function	signature:(TIM3_Channel_TypeDef TIM3_Channel, FunctionalState NewState)
 TIM3_Channel_1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	95;"	enumerator	enum:__anon93
 TIM3_Channel_2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	96;"	enumerator	enum:__anon93
 TIM3_Channel_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	97;"	typedef	typeref:enum:__anon93
 TIM3_ClearFlag	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	737;"	prototype	signature:(TIM3_FLAG_TypeDef TIM3_FLAG)
+TIM3_ClearFlag	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1624;"	function	signature:(TIM3_FLAG_TypeDef TIM3_FLAG)
 TIM3_ClearITPendingBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	739;"	prototype	signature:(TIM3_IT_TypeDef TIM3_IT)
+TIM3_ClearITPendingBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1679;"	function	signature:(TIM3_IT_TypeDef TIM3_IT)
 TIM3_Cmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	679;"	prototype	signature:(FunctionalState NewState)
+TIM3_Cmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	522;"	function	signature:(FunctionalState NewState)
 TIM3_CounterModeConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	711;"	prototype	signature:(TIM3_CounterMode_TypeDef TIM3_CounterMode)
+TIM3_CounterModeConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1052;"	function	signature:(TIM3_CounterMode_TypeDef TIM3_CounterMode)
 TIM3_CounterMode_CenterAligned1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	106;"	enumerator	enum:__anon94
 TIM3_CounterMode_CenterAligned2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	107;"	enumerator	enum:__anon94
 TIM3_CounterMode_CenterAligned3	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	108;"	enumerator	enum:__anon94
@@ -1557,11 +1555,17 @@ TIM3_CounterMode_Down	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l1
 TIM3_CounterMode_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	109;"	typedef	typeref:enum:__anon94
 TIM3_CounterMode_Up	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	104;"	enumerator	enum:__anon94
 TIM3_CtrlPWMOutputs	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	681;"	prototype	signature:(FunctionalState NewState)
+TIM3_CtrlPWMOutputs	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	544;"	function	signature:(FunctionalState NewState)
 TIM3_DeInit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	650;"	prototype	signature:(void)
+TIM3_DeInit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	64;"	function	signature:(void)
 TIM3_ETRClockMode1Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	685;"	prototype	signature:(TIM3_ExtTRGPSC_TypeDef TIM3_ExtTRGPrescaler, TIM3_ExtTRGPolarity_TypeDef TIM3_ExtTRGPolarity, uint8_t TIM3_ExtTRGFilter)
+TIM3_ETRClockMode1Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	619;"	function	signature:(TIM3_ExtTRGPSC_TypeDef TIM3_ExtTRGPrescaler, TIM3_ExtTRGPolarity_TypeDef TIM3_ExtTRGPolarity, uint8_t TIM3_ExtTRGFilter)
 TIM3_ETRClockMode2Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	689;"	prototype	signature:(TIM3_ExtTRGPSC_TypeDef TIM3_ExtTRGPrescaler, TIM3_ExtTRGPolarity_TypeDef TIM3_ExtTRGPolarity, uint8_t TIM3_ExtTRGFilter)
+TIM3_ETRClockMode2Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	651;"	function	signature:(TIM3_ExtTRGPSC_TypeDef TIM3_ExtTRGPrescaler, TIM3_ExtTRGPolarity_TypeDef TIM3_ExtTRGPolarity, uint8_t TIM3_ExtTRGFilter)
 TIM3_ETRConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	692;"	prototype	signature:(TIM3_ExtTRGPSC_TypeDef TIM3_ExtTRGPrescaler, TIM3_ExtTRGPolarity_TypeDef TIM3_ExtTRGPolarity, uint8_t TIM3_ExtTRGFilter)
+TIM3_ETRConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	678;"	function	signature:(TIM3_ExtTRGPSC_TypeDef TIM3_ExtTRGPrescaler, TIM3_ExtTRGPolarity_TypeDef TIM3_ExtTRGPolarity, uint8_t TIM3_ExtTRGFilter)
 TIM3_EncoderInterfaceConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	706;"	prototype	signature:(TIM3_EncoderMode_TypeDef TIM3_EncoderMode, TIM3_ICPolarity_TypeDef TIM3_IC1Polarity, TIM3_ICPolarity_TypeDef TIM3_IC2Polarity)
+TIM3_EncoderInterfaceConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	950;"	function	signature:(TIM3_EncoderMode_TypeDef TIM3_EncoderMode, TIM3_ICPolarity_TypeDef TIM3_IC1Polarity, TIM3_ICPolarity_TypeDef TIM3_IC2Polarity)
 TIM3_EncoderMode_TI1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	286;"	enumerator	enum:__anon112
 TIM3_EncoderMode_TI12	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	288;"	enumerator	enum:__anon112
 TIM3_EncoderMode_TI2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	287;"	enumerator	enum:__anon112
@@ -1592,16 +1596,27 @@ TIM3_ForcedAction_Active	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm
 TIM3_ForcedAction_Inactive	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	49;"	enumerator	enum:__anon89
 TIM3_ForcedAction_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	51;"	typedef	typeref:enum:__anon89
 TIM3_ForcedOC1Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	712;"	prototype	signature:(TIM3_ForcedAction_TypeDef TIM3_ForcedAction)
+TIM3_ForcedOC1Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1078;"	function	signature:(TIM3_ForcedAction_TypeDef TIM3_ForcedAction)
 TIM3_ForcedOC2Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	713;"	prototype	signature:(TIM3_ForcedAction_TypeDef TIM3_ForcedAction)
+TIM3_ForcedOC2Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1104;"	function	signature:(TIM3_ForcedAction_TypeDef TIM3_ForcedAction)
 TIM3_GenerateEvent	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	719;"	prototype	signature:(TIM3_EventSource_TypeDef TIM3_EventSource)
+TIM3_GenerateEvent	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1243;"	function	signature:(TIM3_EventSource_TypeDef TIM3_EventSource)
 TIM3_GetCapture1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	732;"	prototype	signature:(void)
+TIM3_GetCapture1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1507;"	function	signature:(void)
 TIM3_GetCapture2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	733;"	prototype	signature:(void)
+TIM3_GetCapture2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1526;"	function	signature:(void)
 TIM3_GetCounter	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	734;"	prototype	signature:(void)
+TIM3_GetCounter	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1545;"	function	signature:(void)
 TIM3_GetFlagStatus	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	736;"	prototype	signature:(TIM3_FLAG_TypeDef TIM3_FLAG)
+TIM3_GetFlagStatus	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1591;"	function	signature:(TIM3_FLAG_TypeDef TIM3_FLAG)
 TIM3_GetITStatus	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	738;"	prototype	signature:(TIM3_IT_TypeDef TIM3_IT)
+TIM3_GetITStatus	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1644;"	function	signature:(TIM3_IT_TypeDef TIM3_IT)
 TIM3_GetPrescaler	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	735;"	prototype	signature:(void)
+TIM3_GetPrescaler	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1572;"	function	signature:(void)
 TIM3_GetStatus	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	680;"	prototype	signature:(void)
+TIM3_GetStatus	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1797;"	function	signature:(void)
 TIM3_ICInit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	669;"	prototype	signature:(TIM3_Channel_TypeDef TIM3_Channel, TIM3_ICPolarity_TypeDef TIM3_ICPolarity, TIM3_ICSelection_TypeDef TIM3_ICSelection, TIM3_ICPSC_TypeDef TIM3_ICPrescaler, uint8_t TIM3_ICFilter)
+TIM3_ICInit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	398;"	function	signature:(TIM3_Channel_TypeDef TIM3_Channel, TIM3_ICPolarity_TypeDef TIM3_ICPolarity, TIM3_ICSelection_TypeDef TIM3_ICSelection, TIM3_ICPSC_TypeDef TIM3_ICPrescaler, uint8_t TIM3_ICFilter)
 TIM3_ICPSC_Div1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	211;"	enumerator	enum:__anon105
 TIM3_ICPSC_Div2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	212;"	enumerator	enum:__anon105
 TIM3_ICPSC_Div4	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	213;"	enumerator	enum:__anon105
@@ -1615,6 +1630,7 @@ TIM3_ICSelection_IndirectTI	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\
 TIM3_ICSelection_TRGI	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	203;"	enumerator	enum:__anon104
 TIM3_ICSelection_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	204;"	typedef	typeref:enum:__anon104
 TIM3_ITConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	682;"	prototype	signature:(TIM3_IT_TypeDef TIM3_IT, FunctionalState NewState)
+TIM3_ITConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	574;"	function	signature:(TIM3_IT_TypeDef TIM3_IT, FunctionalState NewState)
 TIM3_IT_Break	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	226;"	enumerator	enum:__anon106
 TIM3_IT_CC1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	223;"	enumerator	enum:__anon106
 TIM3_IT_CC2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	224;"	enumerator	enum:__anon106
@@ -1622,19 +1638,28 @@ TIM3_IT_Trigger	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim
 TIM3_IT_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	227;"	typedef	typeref:enum:__anon106
 TIM3_IT_Update	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	222;"	enumerator	enum:__anon106
 TIM3_InternalClockConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	684;"	prototype	signature:(void)
+TIM3_InternalClockConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	597;"	function	signature:(void)
 TIM3_LockLevel_1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	164;"	enumerator	enum:__anon100
 TIM3_LockLevel_2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	165;"	enumerator	enum:__anon100
 TIM3_LockLevel_3	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	166;"	enumerator	enum:__anon100
 TIM3_LockLevel_Off	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	163;"	enumerator	enum:__anon100
 TIM3_LockLevel_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	167;"	typedef	typeref:enum:__anon100
 TIM3_OC1FastCmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	717;"	prototype	signature:(FunctionalState Newstate)
+TIM3_OC1FastCmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1194;"	function	signature:(FunctionalState NewState)
 TIM3_OC1Init	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	654;"	prototype	signature:(TIM3_OCMode_TypeDef TIM3_OCMode, TIM3_OutputState_TypeDef TIM3_OutputState, uint16_t TIM3_Pulse, TIM3_OCPolarity_TypeDef TIM3_OCPolarity, TIM3_OCIdleState_TypeDef TIM3_OCIdleState)
+TIM3_OC1Init	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	174;"	function	signature:(TIM3_OCMode_TypeDef TIM3_OCMode, TIM3_OutputState_TypeDef TIM3_OutputState, uint16_t TIM3_Pulse, TIM3_OCPolarity_TypeDef TIM3_OCPolarity, TIM3_OCIdleState_TypeDef TIM3_OCIdleState)
 TIM3_OC1PolarityConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	720;"	prototype	signature:(TIM3_OCPolarity_TypeDef TIM3_OCPolarity)
+TIM3_OC1PolarityConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1260;"	function	signature:(TIM3_OCPolarity_TypeDef TIM3_OCPolarity)
 TIM3_OC1PreloadConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	715;"	prototype	signature:(FunctionalState Newstate)
+TIM3_OC1PreloadConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1150;"	function	signature:(FunctionalState NewState)
 TIM3_OC2FastCmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	718;"	prototype	signature:(FunctionalState Newstate)
+TIM3_OC2FastCmd	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1216;"	function	signature:(FunctionalState NewState)
 TIM3_OC2Init	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	659;"	prototype	signature:(TIM3_OCMode_TypeDef TIM3_OCMode, TIM3_OutputState_TypeDef TIM3_OutputState, uint16_t TIM3_Pulse, TIM3_OCPolarity_TypeDef TIM3_OCPolarity, TIM3_OCIdleState_TypeDef TIM3_OCIdleState)
+TIM3_OC2Init	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	260;"	function	signature:(TIM3_OCMode_TypeDef TIM3_OCMode, TIM3_OutputState_TypeDef TIM3_OutputState, uint16_t TIM3_Pulse, TIM3_OCPolarity_TypeDef TIM3_OCPolarity, TIM3_OCIdleState_TypeDef TIM3_OCIdleState)
 TIM3_OC2PolarityConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	721;"	prototype	signature:(TIM3_OCPolarity_TypeDef TIM3_OCPolarity)
+TIM3_OC2PolarityConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1284;"	function	signature:(TIM3_OCPolarity_TypeDef TIM3_OCPolarity)
 TIM3_OC2PreloadConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	716;"	prototype	signature:(FunctionalState Newstate)
+TIM3_OC2PreloadConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1172;"	function	signature:(FunctionalState NewState)
 TIM3_OCIdleState_Reset	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	183;"	enumerator	enum:__anon102
 TIM3_OCIdleState_Set	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	184;"	enumerator	enum:__anon102
 TIM3_OCIdleState_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	185;"	typedef	typeref:enum:__anon102
@@ -1661,7 +1686,9 @@ TIM3_PSCReloadMode_Immediate	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc
 TIM3_PSCReloadMode_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	279;"	typedef	typeref:enum:__anon111
 TIM3_PSCReloadMode_Update	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	277;"	enumerator	enum:__anon111
 TIM3_PWMIConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	674;"	prototype	signature:(TIM3_Channel_TypeDef TIM3_Channel, TIM3_ICPolarity_TypeDef TIM3_ICPolarity, TIM3_ICSelection_TypeDef TIM3_ICSelection, TIM3_ICPSC_TypeDef TIM3_ICPrescaler, uint8_t TIM3_ICFilter)
+TIM3_PWMIConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	452;"	function	signature:(TIM3_Channel_TypeDef TIM3_Channel, TIM3_ICPolarity_TypeDef TIM3_ICPolarity, TIM3_ICSelection_TypeDef TIM3_ICSelection, TIM3_ICPSC_TypeDef TIM3_ICPrescaler, uint8_t TIM3_ICFilter)
 TIM3_PrescalerConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	709;"	prototype	signature:(TIM3_Prescaler_TypeDef TIM3_Prescaler, TIM3_PSCReloadMode_TypeDef TIM3_PSCReloadMode)
+TIM3_PrescalerConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1019;"	function	signature:(TIM3_Prescaler_TypeDef TIM3_Prescaler, TIM3_PSCReloadMode_TypeDef TIM3_PSCReloadMode)
 TIM3_Prescaler_1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	58;"	enumerator	enum:__anon90
 TIM3_Prescaler_128	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	65;"	enumerator	enum:__anon90
 TIM3_Prescaler_16	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	62;"	enumerator	enum:__anon90
@@ -1672,18 +1699,31 @@ TIM3_Prescaler_64	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_t
 TIM3_Prescaler_8	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	61;"	enumerator	enum:__anon90
 TIM3_Prescaler_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	66;"	typedef	typeref:enum:__anon90
 TIM3_SelectHallSensor	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	701;"	prototype	signature:(FunctionalState Newstate)
+TIM3_SelectHallSensor	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	813;"	function	signature:(FunctionalState NewState)
 TIM3_SelectInputTrigger	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	698;"	prototype	signature:(TIM3_TRGSelection_TypeDef TIM3_InputTriggerSource)
+TIM3_SelectInputTrigger	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	745;"	function	signature:(TIM3_TRGSelection_TypeDef TIM3_InputTriggerSource)
 TIM3_SelectMasterSlaveMode	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	705;"	prototype	signature:(FunctionalState NewState)
+TIM3_SelectMasterSlaveMode	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	917;"	function	signature:(FunctionalState NewState)
 TIM3_SelectOCxM	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	724;"	prototype	signature:(TIM3_Channel_TypeDef TIM3_Channel, TIM3_OCMode_TypeDef TIM3_OCMode)
+TIM3_SelectOCxM	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1362;"	function	signature:(TIM3_Channel_TypeDef TIM3_Channel, TIM3_OCMode_TypeDef TIM3_OCMode)
 TIM3_SelectOnePulseMode	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	702;"	prototype	signature:(TIM3_OPMode_TypeDef TIM3_OPMode)
+TIM3_SelectOnePulseMode	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	837;"	function	signature:(TIM3_OPMode_TypeDef TIM3_OPMode)
 TIM3_SelectOutputTrigger	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	703;"	prototype	signature:(TIM3_TRGOSource_TypeDef TIM3_TRGOSource)
+TIM3_SelectOutputTrigger	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	865;"	function	signature:(TIM3_TRGOSource_TypeDef TIM3_TRGOSource)
 TIM3_SelectSlaveMode	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	704;"	prototype	signature:(TIM3_SlaveMode_TypeDef TIM3_SlaveMode)
+TIM3_SelectSlaveMode	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	893;"	function	signature:(TIM3_SlaveMode_TypeDef TIM3_SlaveMode)
 TIM3_SetAutoreload	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	727;"	prototype	signature:(uint16_t TIM3_Autoreload)
+TIM3_SetAutoreload	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1413;"	function	signature:(uint16_t TIM3_Autoreload)
 TIM3_SetCompare1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	728;"	prototype	signature:(uint16_t TIM3_Compare)
+TIM3_SetCompare1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1426;"	function	signature:(uint16_t TIM3_Compare)
 TIM3_SetCompare2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	729;"	prototype	signature:(uint16_t TIM3_Compare)
+TIM3_SetCompare2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1439;"	function	signature:(uint16_t TIM3_Compare)
 TIM3_SetCounter	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	726;"	prototype	signature:(uint16_t TIM3_Counter)
+TIM3_SetCounter	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1399;"	function	signature:(uint16_t TIM3_Counter)
 TIM3_SetIC1Prescaler	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	730;"	prototype	signature:(TIM3_ICPSC_TypeDef TIM3_IC1Prescaler)
+TIM3_SetIC1Prescaler	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1456;"	function	signature:(TIM3_ICPSC_TypeDef TIM3_IC1Prescaler)
 TIM3_SetIC2Prescaler	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	731;"	prototype	signature:(TIM3_ICPSC_TypeDef TIM3_IC2Prescaler)
+TIM3_SetIC2Prescaler	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	1484;"	function	signature:(TIM3_ICPSC_TypeDef TIM3_IC2Prescaler)
 TIM3_SlaveMode_External1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	333;"	enumerator	enum:__anon116
 TIM3_SlaveMode_Gated	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	331;"	enumerator	enum:__anon116
 TIM3_SlaveMode_Reset	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	330;"	enumerator	enum:__anon116
@@ -1694,6 +1734,7 @@ TIM3_TIxExternalCLK1Source_TI1ED	..\..\..\..\libraries\stm8l10x_stdperiph_driver
 TIM3_TIxExternalCLK1Source_TI2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	260;"	enumerator	enum:__anon109
 TIM3_TIxExternalCLK1Source_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	261;"	typedef	typeref:enum:__anon109
 TIM3_TIxExternalClockConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	695;"	prototype	signature:(TIM3_TIxExternalCLK1Source_TypeDef TIM3_TIxExternalCLKSource, TIM3_ICPolarity_TypeDef TIM3_ICPolarity, uint8_t TIM3_ICFilter)
+TIM3_TIxExternalClockConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	705;"	function	signature:(TIM3_TIxExternalCLK1Source_TypeDef TIM3_TIxExternalCLKSource, TIM3_ICPolarity_TypeDef TIM3_ICPolarity, uint8_t TIM3_ICFilter)
 TIM3_TRGOSource_Enable	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	318;"	enumerator	enum:__anon115
 TIM3_TRGOSource_OC1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	320;"	enumerator	enum:__anon115
 TIM3_TRGOSource_OC1Ref	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	321;"	enumerator	enum:__anon115
@@ -1709,10 +1750,13 @@ TIM3_TRGSelection_TIM2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l
 TIM3_TRGSelection_TIM4	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	246;"	enumerator	enum:__anon108
 TIM3_TRGSelection_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	251;"	typedef	typeref:enum:__anon108
 TIM3_TimeBaseInit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	651;"	prototype	signature:(TIM3_Prescaler_TypeDef TIM3_Prescaler, TIM3_CounterMode_TypeDef TIM3_CounterMode, uint16_t TIM3_Period)
+TIM3_TimeBaseInit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	127;"	function	signature:(TIM3_Prescaler_TypeDef TIM3_Prescaler, TIM3_CounterMode_TypeDef TIM3_CounterMode, uint16_t TIM3_Period)
 TIM3_UPD_OVF_TRG_BRK_IRQHandler	..\..\stm8l10x_it.h	80;"	prototype	signature:(void)
 TIM3_UPD_OVF_TRG_BRK_IRQn	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_itc.h	62;"	enumerator	enum:__anon45
 TIM3_UpdateDisableConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	699;"	prototype	signature:(FunctionalState Newstate)
+TIM3_UpdateDisableConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	767;"	function	signature:(FunctionalState NewState)
 TIM3_UpdateRequestConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	700;"	prototype	signature:(TIM3_UpdateSource_TypeDef TIM3_UpdateSource)
+TIM3_UpdateRequestConfig	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c	791;"	function	signature:(TIM3_UpdateSource_TypeDef TIM3_UpdateSource)
 TIM3_UpdateSource_Global	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	308;"	enumerator	enum:__anon114
 TIM3_UpdateSource_Regular	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	309;"	enumerator	enum:__anon114
 TIM3_UpdateSource_TypeDef	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_tim3.h	310;"	typedef	typeref:enum:__anon114
@@ -2160,7 +2204,7 @@ __STM8L10x_IRTIM_H	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_
 __STM8L10x_IT_H	..\..\stm8l10x_it.h	30;"	macro
 _stext	..\..\stm8l10x_it.h	58;"	prototype	signature:(void)
 _vectab	stm8_interrupt_vector.c	15;"	variable
-assert_failed	..\..\main.c	231;"	function	signature:(uint8_t* file, uint32_t line)
+assert_failed	..\..\main.c	239;"	function	signature:(uint8_t* file, uint32_t line)
 assert_failed	..\..\stm8l10x_conf.h	74;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	..\..\stm8l10x_conf.h	72;"	macro
 assert_param	..\..\stm8l10x_conf.h	76;"	macro
@@ -2174,7 +2218,7 @@ bool	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	151;"	typede
 btn1_0_cnt	..\..\stm8l10x_it.c	50;"	variable
 btn1_1_cnt	..\..\stm8l10x_it.c	51;"	variable
 btn1_delay_cnt	..\..\stm8l10x_it.c	54;"	variable
-chksum	..\..\rf_send.c	8;"	variable	file:
+chksum	..\..\rf_send.c	7;"	variable	file:
 cnt_blink_greenLED	..\..\stm8l10x_it.c	74;"	variable
 cnt_blink_redLED	..\..\stm8l10x_it.c	73;"	variable
 cnt_flag_1000ms	..\..\stm8l10x_it.c	44;"	variable
@@ -2186,7 +2230,7 @@ debug_reg_idx	..\..\main.c	95;"	variable	file:
 debug_registers	..\..\main.c	94;"	variable	file:
 delay_4us	..\..\delay.c	35;"	function	signature:(u8 n_4us)
 delay_ms	..\..\delay.c	11;"	function	signature:(u16 n_ms)
-delay_ms	..\..\delay.h	28;"	prototype	signature:(u16)
+delay_ms	..\..\delay.h	12;"	prototype	signature:(u16)
 disableInterrupts	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1314;"	macro
 disableInterrupts	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1324;"	macro
 disableInterrupts	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1335;"	macro
@@ -2215,7 +2259,6 @@ interrupt_instruction	stm8_interrupt_vector.c	11;"	member	struct:interrupt_vecto
 interrupt_status	..\..\main.c	93;"	variable	file:
 interrupt_status	..\..\stm8l10x_it.c	66;"	variable	file:
 interrupt_vector	stm8_interrupt_vector.c	10;"	struct	file:
-m_RFseccode	..\..\rf_send.c	7;"	variable	file:
 main	..\..\main.c	111;"	function	signature:(void)
 nop	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1317;"	macro
 nop	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1327;"	macro
@@ -2230,7 +2273,7 @@ s8	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	144;"	typedef
 sim	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1316;"	macro
 sim	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1326;"	macro
 sim	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1337;"	macro
-spi_transfer	..\..\config.c	38;"	function	signature:(uint8_t tx)
+spi_transfer	..\..\config.c	51;"	function	signature:(uint8_t tx)
 state	..\..\main.c	91;"	variable	file:
 tBtoDW	..\..\main.c	71;"	typedef	typeref:union:__anon2	file:
 tReceivers	..\..\main.c	60;"	typedef	typeref:struct:__anon1	file:
