@@ -798,6 +798,7 @@ ResourceID=0
 
 [WorkState_v1_2.DockState.Bar-20]
 BarID=5701
+Visible=False
 XPos=429
 YPos=-2
 Docking=True

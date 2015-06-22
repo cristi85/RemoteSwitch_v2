@@ -193,18 +193,23 @@ void BTN1_Released()
 {
   if(BTN1_press_timer < BTN1_DELETE_ID_THR)
   {
+    u8 i;
     /* Button press was shorter than 3 seconds */
     disableInterrupts();
-    LED_GREEN_ON;
-    RF_Send(RFCMD_OPENDOORS);
+    for(i=0; i<100;i++)
+    {
+      LED_GREEN_ON;
+      RF_Send(RFCMD_OPENDOORS);
+      LED_OFF;
+      delay_ms(BTN1_press_timer/3);
+    }
     enableInterrupts();
-    LED_OFF;
   }
   else
   {
     /* Button press was longer than 3 seconds */
     disableInterrupts();
-    LED_GREEN_ON;
+    LED_RED_ON;
     RF_Send(RFCMD_CLOSEDOORS);
     enableInterrupts();
     LED_OFF;

@@ -1101,7 +1101,7 @@ FAR	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	133;"	macro
 FCR1	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2185;"	member	struct:__anon205::__anon206::__anon212
 FCR2	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2186;"	member	struct:__anon205::__anon206::__anon212
 FCR3	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2187;"	member	struct:__anon205::__anon206::__anon212
-FLAG_UART_cmd_rcv	..\..\src\stm8s_it.c	56;"	variable
+FLAG_UART_cmd_rcv	..\..\src\stm8s_it.c	59;"	variable
 FLASH	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2513;"	macro
 FLASH_BLOCK_SIZE	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_flash.h	43;"	macro
 FLASH_BLOCK_SIZE	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_flash.h	52;"	macro
@@ -1466,7 +1466,7 @@ INTERRUPT_HANDLER	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2646;
 INTERRUPT_HANDLER_TRAP	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2635;"	macro
 INTERRUPT_HANDLER_TRAP	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2640;"	macro
 INTERRUPT_HANDLER_TRAP	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2649;"	macro
-INTERRUPT_HANDLER_TRAP	..\..\src\stm8s_it.c	104;"	function
+INTERRUPT_HANDLER_TRAP	..\..\src\stm8s_it.c	107;"	function
 IN_RAM	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	160;"	macro
 IN_RAM	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	162;"	macro
 IN_RAM	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	164;"	macro
@@ -2007,27 +2007,30 @@ RFNodeId	..\..\src\stm8s_it.h	36;"	member	struct:__anon8::__anon9
 RFR	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2057;"	member	struct:__anon205
 RFRCV_PIN	..\..\src\board.h	55;"	macro
 RFRCV_PORT	..\..\src\board.h	54;"	macro
-RFRECORDLEN	..\..\src\stm8s_it.c	35;"	macro	file:
+RFRECORDLEN	..\..\src\stm8s_it.c	38;"	macro	file:
 RFSEND_DATALEN	..\..\src\stm8s_it.h	29;"	macro
-RFSYNCVAL	..\..\src\stm8s_it.c	34;"	macro	file:
-RF_MIDDLEBIT	..\..\src\stm8s_it.c	32;"	macro	file:
-RF_PulsePeriod	..\..\src\stm8s_it.c	46;"	variable	file:
-RF_RCVSTATE_REC8BITS	..\..\src\stm8s_it.c	53;"	enumerator	enum:__anon1	file:
-RF_RCVSTATE_WAITSTART	..\..\src\stm8s_it.c	52;"	enumerator	enum:__anon1	file:
-RF_RCVTIMEOUT	..\..\src\stm8s_it.c	33;"	macro	file:
-RF_bits	..\..\src\stm8s_it.c	43;"	variable	file:
-RF_bytes	..\..\src\stm8s_it.c	44;"	variable	file:
-RF_data	..\..\src\stm8s_it.c	45;"	variable	file:
-RF_rcvState	..\..\src\stm8s_it.c	55;"	variable	file:
-RF_rcvState_t	..\..\src\stm8s_it.c	54;"	typedef	typeref:enum:__anon1	file:
-RFbytesReady	..\..\src\stm8s_it.c	39;"	variable
+RFSYNCVAL	..\..\src\stm8s_it.c	37;"	macro	file:
+RF_BITPERIOD_MAX	..\..\src\stm8s_it.c	34;"	macro	file:
+RF_MIDDLEBIT	..\..\src\stm8s_it.c	35;"	macro	file:
+RF_PulsePeriod	..\..\src\stm8s_it.c	49;"	variable	file:
+RF_RCVSTATE_REC8BITS	..\..\src\stm8s_it.c	56;"	enumerator	enum:__anon1	file:
+RF_RCVSTATE_WAITSTART	..\..\src\stm8s_it.c	55;"	enumerator	enum:__anon1	file:
+RF_RCVTIMEOUT	..\..\src\stm8s_it.c	36;"	macro	file:
+RF_START_PULSE_MAX	..\..\src\stm8s_it.c	33;"	macro	file:
+RF_START_PULSE_MIN	..\..\src\stm8s_it.c	32;"	macro	file:
+RF_bits	..\..\src\stm8s_it.c	46;"	variable	file:
+RF_bytes	..\..\src\stm8s_it.c	47;"	variable	file:
+RF_data	..\..\src\stm8s_it.c	48;"	variable	file:
+RF_rcvState	..\..\src\stm8s_it.c	58;"	variable	file:
+RF_rcvState_t	..\..\src\stm8s_it.c	57;"	typedef	typeref:enum:__anon1	file:
+RFbytesReady	..\..\src\stm8s_it.c	42;"	variable
 RFcmd	..\..\src\stm8s_it.h	37;"	member	struct:__anon8::__anon9
 RFmsgCHKSUM	..\..\src\stm8s_it.h	38;"	member	struct:__anon8::__anon9
 RFmsg_t	..\..\src\stm8s_it.h	41;"	typedef	typeref:union:__anon8
 RFmsgarray	..\..\src\stm8s_it.h	40;"	member	union:__anon8
 RFmsgmember	..\..\src\stm8s_it.h	39;"	member	union:__anon8	typeref:struct:__anon8::__anon9
-RFrcvChksum	..\..\src\stm8s_it.c	38;"	variable	file:
-RFrcvTimeoutcnt	..\..\src\stm8s_it.c	40;"	variable	file:
+RFrcvChksum	..\..\src\stm8s_it.c	41;"	variable	file:
+RFrcvTimeoutcnt	..\..\src\stm8s_it.c	43;"	variable	file:
 RFsyncValue	..\..\src\stm8s_it.h	35;"	member	struct:__anon8::__anon9
 RLR	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1598;"	member	struct:IWDG_struct
 RMsgRcvdCnt	..\..\src\main.c	30;"	variable	file:
@@ -2049,7 +2052,7 @@ RST_SR_WWDGF	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1670;"	mac
 RST_TypeDef	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1660;"	typedef	typeref:struct:RST_struct
 RST_struct	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1656;"	struct
 RXCRCR	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1689;"	member	struct:SPI_struct
-RcvRFmsg	..\..\src\stm8s_it.c	37;"	variable
+RcvRFmsg	..\..\src\stm8s_it.c	40;"	variable
 Reserved1	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2182;"	member	struct:__anon205::__anon206::__anon212
 Reserved2	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2188;"	member	struct:__anon205::__anon206::__anon212
 RxFIFO	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2211;"	member	union:__anon205::__anon206	typeref:struct:__anon205::__anon206::__anon213
@@ -4008,11 +4011,11 @@ __STM8S_UART1_H	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h	2
 __STM8S_UART2_H	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart2.h	24;"	macro
 __STM8S_UART3_H	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_uart3.h	24;"	macro
 __STM8S_WWDG_H	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s_wwdg.h	24;"	macro
-_highB	..\..\src\stm8s_it.c	41;"	variable	file:
-_lowB	..\..\src\stm8s_it.c	42;"	variable	file:
+_highB	..\..\src\stm8s_it.c	44;"	variable	file:
+_lowB	..\..\src\stm8s_it.c	45;"	variable	file:
 _stext	..\..\src\stm8s_it.h	49;"	prototype	signature:(void)
 _vectab	..\..\src\stm8_interrupt_vector.c	15;"	variable
-assert_failed	..\..\src\main.c	82;"	function	signature:(u8* file, u32 line)
+assert_failed	..\..\src\main.c	99;"	function	signature:(u8* file, u32 line)
 assert_failed	..\..\src\stm8s_conf.h	101;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	..\..\src\stm8s_conf.h	103;"	macro
 assert_param	..\..\src\stm8s_conf.h	99;"	macro
@@ -4030,11 +4033,11 @@ enableInterrupts	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2621;"
 error_cnt	..\..\src\errors.c	4;"	variable	file:
 error_cnt_thr	..\..\src\errors.c	5;"	variable	file:
 error_state	..\..\src\errors.c	6;"	variable	file:
-flag_RF_StartRec	..\..\src\stm8s_it.c	49;"	variable	file:
+flag_RF_StartRec	..\..\src\stm8s_it.c	52;"	variable	file:
 halt	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2609;"	macro
 halt	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2618;"	macro
 halt	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2628;"	macro
-idx_temp2	..\..\src\stm8s_it.c	48;"	variable	file:
+idx_temp2	..\..\src\stm8s_it.c	51;"	variable	file:
 int16_t	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	201;"	typedef
 int32_t	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	202;"	typedef
 int8_t	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	200;"	typedef
@@ -4055,7 +4058,7 @@ s8	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	213;"	typedef
 sim	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2605;"	macro
 sim	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2614;"	macro
 sim	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2624;"	macro
-temp2	..\..\src\stm8s_it.c	47;"	variable	file:
+temp2	..\..\src\stm8s_it.c	50;"	variable	file:
 trap	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2607;"	macro
 trap	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2616;"	macro
 trap	..\..\..\..\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2626;"	macro
