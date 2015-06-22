@@ -1085,17 +1085,16 @@ RFCMD_CLOSEDOORS	..\..\rf_send.h	11;"	enumerator	enum:__anon4
 RFCMD_OPENDOORS	..\..\rf_send.h	10;"	enumerator	enum:__anon4
 RFNODEID	..\..\rf_send.h	7;"	macro
 RFNodeId	..\..\rf_send.h	19;"	member	struct:__anon5::__anon6
-RFPULSE	..\..\rf_send.c	9;"	function	signature:(u16 LOW, u16 HIGH)
 RFSEND_DATALEN	..\..\rf_send.h	6;"	macro
-RFSYNCVAL	..\..\rf_send.c	5;"	macro	file:
+RFSYNCVAL	..\..\rf_send.c	4;"	macro	file:
 RF_Cmd_TypeDef	..\..\rf_send.h	12;"	typedef	typeref:enum:__anon4
 RF_OUT	..\..\board.h	40;"	macro
 RF_OUT_PIN	..\..\board.h	38;"	macro
 RF_OUT_PORT	..\..\board.h	37;"	macro
-RF_Send	..\..\rf_send.c	17;"	function	signature:(RF_Cmd_TypeDef RFcmd)
+RF_Send	..\..\rf_send.c	8;"	function	signature:(RF_Cmd_TypeDef RFcmd)
 RF_Send	..\..\rf_send.h	26;"	prototype	signature:(RF_Cmd_TypeDef RF_cmd)
 RFcmd	..\..\rf_send.h	20;"	member	struct:__anon5::__anon6
-RFmsg	..\..\rf_send.c	6;"	variable	file:
+RFmsg	..\..\rf_send.c	5;"	variable	file:
 RFmsgCHKSUM	..\..\rf_send.h	21;"	member	struct:__anon5::__anon6
 RFmsg_t	..\..\rf_send.h	24;"	typedef	typeref:union:__anon5
 RFmsgarray	..\..\rf_send.h	23;"	member	union:__anon5
@@ -1260,11 +1259,11 @@ SetBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1393;"	mac
 States	..\..\main.c	72;"	enum	file:
 StatesType	..\..\main.c	80;"	typedef	typeref:enum:States	file:
 TASK_1000ms	..\..\main.c	101;"	prototype	file:	signature:(void)
-TASK_1000ms	..\..\main.c	215;"	function
+TASK_1000ms	..\..\main.c	220;"	function
 TASK_250ms	..\..\main.c	103;"	prototype	file:	signature:(void)
-TASK_250ms	..\..\main.c	225;"	function
+TASK_250ms	..\..\main.c	230;"	function
 TASK_500ms	..\..\main.c	102;"	prototype	file:	signature:(void)
-TASK_500ms	..\..\main.c	220;"	function
+TASK_500ms	..\..\main.c	225;"	function
 TBR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	215;"	member	struct:AWU_struct
 TI1_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim2.c	1675;"	function	file:	signature:(TIM2_ICPolarity_TypeDef TIM2_ICPolarity, \ TIM2_ICSelection_TypeDef TIM2_ICSelection, \ uint8_t TIM2_ICFilter)
 TI1_Config	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim2.c	44;"	prototype	file:	signature:(TIM2_ICPolarity_TypeDef TIM2_ICPolarity, TIM2_ICSelection_TypeDef TIM2_ICSelection, uint8_t TIM2_ICFilter)
@@ -2204,7 +2203,7 @@ __STM8L10x_IRTIM_H	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_
 __STM8L10x_IT_H	..\..\stm8l10x_it.h	30;"	macro
 _stext	..\..\stm8l10x_it.h	58;"	prototype	signature:(void)
 _vectab	stm8_interrupt_vector.c	15;"	variable
-assert_failed	..\..\main.c	239;"	function	signature:(uint8_t* file, uint32_t line)
+assert_failed	..\..\main.c	244;"	function	signature:(uint8_t* file, uint32_t line)
 assert_failed	..\..\stm8l10x_conf.h	74;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	..\..\stm8l10x_conf.h	72;"	macro
 assert_param	..\..\stm8l10x_conf.h	76;"	macro
@@ -2218,7 +2217,7 @@ bool	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	151;"	typede
 btn1_0_cnt	..\..\stm8l10x_it.c	50;"	variable
 btn1_1_cnt	..\..\stm8l10x_it.c	51;"	variable
 btn1_delay_cnt	..\..\stm8l10x_it.c	54;"	variable
-chksum	..\..\rf_send.c	7;"	variable	file:
+chksum	..\..\rf_send.c	6;"	variable	file:
 cnt_blink_greenLED	..\..\stm8l10x_it.c	74;"	variable
 cnt_blink_redLED	..\..\stm8l10x_it.c	73;"	variable
 cnt_flag_1000ms	..\..\stm8l10x_it.c	44;"	variable

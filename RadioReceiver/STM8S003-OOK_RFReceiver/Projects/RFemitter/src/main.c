@@ -43,14 +43,37 @@ void main(void)
   {
     if(RFbytesReady == TRUE)
     {
-      LCD_Clear();
-      LCD_WriteNumber((u32)(++RMsgRcvdCnt));
-      LCD_Move_Cursor(1, 4);
-      LCD_WriteByte(RcvRFmsg.RFmsgmember.RFNodeId, TRUE);
-      LCD_Move_Cursor(1, 9);
-      LCD_WriteByte(RcvRFmsg.RFmsgmember.RFcmd, TRUE);
-      LCD_Move_Cursor(2, 1);
-      LCD_WriteByte(RcvRFmsg.RFmsgmember.RFmsgCHKSUM, TRUE);
+      switch(RcvRFmsg.RFmsgmember.RFcmd)
+      {
+        case 0x0F:
+        {
+          RMsgRcvdCnt++;
+          LCD_Move_Cursor(1, 1);
+          LCD_WriteNumber((u32)RMsgRcvdCnt);
+          break;
+        }
+        case 0xF0:
+        {
+          RMsgRcvdCnt = 0;
+          LCD_Clear();
+          LCD_Move_Cursor(1, 1);
+          LCD_WriteString("0   received");
+          
+          break;
+        }
+        default:
+        {
+          LCD_Clear();
+          LCD_WriteNumber((u32)(++RMsgRcvdCnt));
+          LCD_Move_Cursor(1, 4);
+          LCD_WriteByte(RcvRFmsg.RFmsgmember.RFNodeId, TRUE);
+          LCD_Move_Cursor(1, 9);
+          LCD_WriteByte(RcvRFmsg.RFmsgmember.RFcmd, TRUE);
+          LCD_Move_Cursor(2, 1);
+          LCD_WriteByte(RcvRFmsg.RFmsgmember.RFmsgCHKSUM, TRUE); 
+          break;
+        }
+      }
       RFbytesReady = FALSE;
     }
   }

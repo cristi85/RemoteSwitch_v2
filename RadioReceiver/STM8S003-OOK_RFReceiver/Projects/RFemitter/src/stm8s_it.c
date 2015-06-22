@@ -29,10 +29,10 @@
 
 
 // ===== RF Receive =====
-#define RF_START_PULSE_MIN (u16)1150
-#define RF_START_PULSE_MAX (u16)1350
+#define RF_START_PULSE_MIN (u16)1100
+#define RF_START_PULSE_MAX (u16)1300
 #define RF_BITPERIOD_MAX   (u16)1000
-#define RF_MIDDLEBIT       (u16)630
+#define RF_MIDDLEBIT       (u16)625
 #define RF_RCVTIMEOUT      (u8)100
 #define RFSYNCVAL          (u16)0x81B3
 #define RFRECORDLEN        (u8)30

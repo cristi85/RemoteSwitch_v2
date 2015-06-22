@@ -4015,7 +4015,7 @@ _highB	..\..\src\stm8s_it.c	44;"	variable	file:
 _lowB	..\..\src\stm8s_it.c	45;"	variable	file:
 _stext	..\..\src\stm8s_it.h	49;"	prototype	signature:(void)
 _vectab	..\..\src\stm8_interrupt_vector.c	15;"	variable
-assert_failed	..\..\src\main.c	82;"	function	signature:(u8* file, u32 line)
+assert_failed	..\..\src\main.c	99;"	function	signature:(u8* file, u32 line)
 assert_failed	..\..\src\stm8s_conf.h	101;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	..\..\src\stm8s_conf.h	103;"	macro
 assert_param	..\..\src\stm8s_conf.h	99;"	macro
