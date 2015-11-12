@@ -43,7 +43,7 @@ String.100.3=STM8 Cosmic
 String.100.4=ST7 Metrowerks V1.1
 String.100.5=Raisonance
 String.101.0=STM8 Cosmic
-String.102.0=C:\Program Files (x86)\COSMIC\CXSTM8_32K
+String.102.0=
 String.103.0=
 String.104.0=Hstm8
 String.105.0=Lib
@@ -209,16 +209,6 @@ Next=Root.Source Files...\..\stm8l10x_it.h
 [Root.Source Files...\..\stm8l10x_it.h]
 ElemType=File
 PathName=..\..\stm8l10x_it.h
-Next=Root.Source Files...\..\timeout.c
-
-[Root.Source Files...\..\timeout.c]
-ElemType=File
-PathName=..\..\timeout.c
-Next=Root.Source Files...\..\timeout.h
-
-[Root.Source Files...\..\timeout.h]
-ElemType=File
-PathName=..\..\timeout.h
 Next=Root.Source Files.stm8_interrupt_vector.c
 
 [Root.Source Files.stm8_interrupt_vector.c]

@@ -7,8 +7,8 @@
 #define RFNODEID        (u8)0x56
 
 typedef enum {
-  RFCMD_OPENDOORS  = (u8)0x0F, /* command to open doors */
-  RFCMD_CLOSEDOORS = (u8)0xF0  /* command to close doors */
+  RFCMD_HEATING_ON  = (u8)0x0F, 
+  RFCMD_HEATING_OFF = (u8)0xF0
 } RF_Cmd_TypeDef;
 
 typedef union
@@ -21,7 +21,7 @@ typedef union
     u8  RFmsgCHKSUM;
   }RFmsgmember;
   u8 RFmsgarray[RFSEND_DATALEN];
-}RFmsg_t;
+  }RFmsg_t;
 
 void RF_Send(RF_Cmd_TypeDef RF_cmd);
 

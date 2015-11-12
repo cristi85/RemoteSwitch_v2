@@ -33,26 +33,11 @@
 #include "stm8l10x.h"
 
 /* Exported types ------------------------------------------------------------*/
-#define BTN_DEPRESSED     (u8)0
-#define BTN_PRESSED       (u8)1
-extern u8 BTN1_DEB_STATE;
-extern _Bool BTN1_DELAY_FLAG;
-extern u16 BTN1_press_timer;
-
-extern _Bool FLAG_250ms;
-extern _Bool FLAG_500ms;
-extern _Bool FLAG_1000ms;
-
-extern u8 blink_redLED_times;
-extern u8 blink_greenLED_times;
-extern u16 cnt_state_redLED;
-extern u16 cnt_state_greenLED;
-extern _Bool flag_blink_on_off;
-extern _Bool flag_blink_redLED;
-extern _Bool flag_blink_greenLED;
-extern _Bool flag_blink_unlimited;
+extern u8 btn_pressed;
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
+#define BUTTON1 (u8)1
+#define BUTTON2 (u8)2
 /* Exported functions ------------------------------------------------------- */
 #ifdef _COSMIC_
  void _stext(void); /* RESET startup routine */

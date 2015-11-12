@@ -54,7 +54,6 @@ Debug\errors.o
 Debug\main.o
 Debug\rf_send.o
 Debug\stm8l10x_it.o
-Debug\timeout.o
 Debug\stm8l10x_clk.o
 Debug\stm8l10x_exti.o
 Debug\stm8l10x_flash.o

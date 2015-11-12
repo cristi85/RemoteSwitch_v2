@@ -32,58 +32,12 @@
 /** @addtogroup STM8L10x_StdPeriph_Templates
   * @{
   */
-/* Periodic Tasks */
-#define CNTVAL_250MS  (u16)250
-_Bool FLAG_250ms = FALSE;
-u16 cnt_flag_250ms = 0;
-#define CNTVAL_500MS  (u16)500
-_Bool FLAG_500ms = FALSE;
-u16 cnt_flag_500ms = 0;
-#define CNTVAL_1000MS (u16)1000
-_Bool FLAG_1000ms = FALSE;
-u16 cnt_flag_1000ms = 0;
-/*================*/
-
-/* Buttons debouncing and repetition delay */
-#define DIG_IN_DEB_TIME   (u8)30    /* 30ms digital input debounce time */
-#define BTN_DELAY         (u8)150   //300ms
-u8 btn1_0_cnt = 0;
-u8 btn1_1_cnt = 0;
-u8 BTN1_DEB_STATE = BTN_DEPRESSED;	
-_Bool BTN1_DELAY_FLAG = FALSE;
-u8 btn1_delay_cnt = 0;
-u16 BTN1_press_timer = 0;
-/* External variables */
-extern _Bool Timeout_istout1;
-extern _Bool Timeout_istout2;
-extern _Bool Timeout_istout3;
-extern u16 Timeout_toutcnt1;
-extern u16 Timeout_toutcnt2;
-extern u16 Timeout_toutcnt3;
-extern u16 Timeout_tout1;
-extern u16 Timeout_tout2;
-extern u16 Timeout_tout3;
-static volatile u8 interrupt_status;
-
-/* LED Blink */
-#define LEDBLINK_ONTIME  (u16)50
-#define LEDBLINK_OFFTIME (u16)200
-u16 cnt_state_redLED = 0;
-u16 cnt_state_greenLED = 0;
-u8 cnt_blink_redLED = 0;
-u8 cnt_blink_greenLED = 0;
-u8 blink_redLED_times = 0;
-u8 blink_greenLED_times = 0;
-_Bool flag_blink_on_off = TRUE;
-_Bool flag_blink_redLED = FALSE;
-_Bool flag_blink_greenLED = FALSE;
-_Bool flag_blink_unlimited = TRUE;
-extern _Bool flag_blink_redLED;
-extern _Bool flag_blink_greenLED;
+	
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+u8 btn_pressed = 0;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -183,6 +137,20 @@ INTERRUPT_HANDLER(EXTI1_IRQHandler, 9)
     /* In order to detect unexpected events during development,
        it is recommended to set a breakpoint on the following instruction.
     */
+  RFM_ON;
+  LED_GREEN_ON;
+  DELAY20MS_START;
+  if(!BTN1_STATE)
+  {
+    btn_pressed = BUTTON1;
+    while(!BTN1_STATE);
+  }
+  if(!BTN2_STATE)
+  {
+    btn_pressed = BUTTON2;
+    while(!BTN2_STATE);
+  }
+  EXTI->SR1 |= BTN2_PIN;  //clear interrupt flag
 }
 
 /**
@@ -195,6 +163,20 @@ INTERRUPT_HANDLER(EXTI2_IRQHandler, 10)
     /* In order to detect unexpected events during development,
        it is recommended to set a breakpoint on the following instruction.
     */
+  RFM_ON;
+  LED_GREEN_ON;
+  DELAY20MS_START;
+  if(!BTN1_STATE)
+  {
+    btn_pressed = BUTTON1;
+    while(!BTN1_STATE);
+  }
+  if(!BTN2_STATE)
+  {
+    btn_pressed = BUTTON2;
+    while(!BTN2_STATE);
+  }
+  EXTI->SR1 |= BTN1_PIN;  //clear interrupt flag
 }
 
 /**
@@ -280,150 +262,7 @@ INTERRUPT_HANDLER(TIM2_UPD_OVF_TRG_BRK_IRQHandler, 19)
     /* In order to detect unexpected events during development,
        it is recommended to set a breakpoint on the following instruction.
     */
-  interrupt_status = 1;
-  if(TIM2_GetITStatus(TIM2_IT_Update))  //1ms
-  {
-    /* ===== CKECK PERIODIC TASKS FLAGS ===== */
-    if(cnt_flag_250ms < U16_MAX) cnt_flag_250ms++;
-    if(cnt_flag_250ms >= CNTVAL_250MS) 
-    {
-      cnt_flag_250ms = 0;
-      FLAG_250ms = TRUE;
-    }
-    if(cnt_flag_500ms < U16_MAX) cnt_flag_500ms++;
-    if(cnt_flag_500ms >= CNTVAL_500MS) 
-    {
-      cnt_flag_500ms = 0;
-      FLAG_500ms = TRUE;
-    }
-    if(cnt_flag_1000ms < U16_MAX) cnt_flag_1000ms++;
-    if(cnt_flag_1000ms >= CNTVAL_1000MS) 
-    {
-      cnt_flag_1000ms = 0;
-      FLAG_1000ms = TRUE;
-    }
-    /* ===== CHECK TIMEOUTS ===== */
-    if(!Timeout_istout1)
-    {
-      Timeout_toutcnt1++;
-      if(Timeout_toutcnt1 >= Timeout_tout1) Timeout_istout1 = TRUE;
-    }
-    if(!Timeout_istout2)
-    {
-      Timeout_toutcnt2++;
-      if(Timeout_toutcnt2 >= Timeout_tout2) Timeout_istout2 = TRUE;
-    }
-    if(!Timeout_istout3)
-    {
-      Timeout_toutcnt3++;
-      if(Timeout_toutcnt3 >= Timeout_tout3) Timeout_istout3 = TRUE;
-    }
-    /* ========== DEBOUNCE INPUTS ========== 1MS */
-    /* Debounce BTN1 */
-    if(!BTN1_STATE)
-    {
-      if(btn1_0_cnt < U8_MAX) btn1_0_cnt++;
-      btn1_1_cnt = 0;
-      if(btn1_0_cnt >= DIG_IN_DEB_TIME)
-      {
-        BTN1_DEB_STATE = BTN_PRESSED;
-      }
-    }
-    else
-    {
-      if(btn1_1_cnt < U8_MAX) btn1_1_cnt++;
-      btn1_0_cnt = 0;
-      if(btn1_1_cnt >= DIG_IN_DEB_TIME)
-      {
-        BTN1_DEB_STATE = BTN_DEPRESSED;
-        //BTN1_press_timer = 0;
-      }
-    }
-   
-    /* Record button press time */
-    if(BTN1_DEB_STATE == BTN_PRESSED)
-    {
-      if(BTN1_press_timer < U16_MAX) BTN1_press_timer++;
-    }
-    /* Process button repetition rate delays */
-    if(!BTN1_DELAY_FLAG)
-    {
-      btn1_delay_cnt++;
-      if(btn1_delay_cnt == BTN_DELAY)
-      {
-        btn1_delay_cnt = 0;
-        BTN1_DELAY_FLAG = TRUE;
-      }
-    }
-    /* ======================================= */
-    
-    /* Blink LED */
-    if(flag_blink_redLED)
-    {
-      if(cnt_state_redLED < U16_MAX) cnt_state_redLED++;
-      if(flag_blink_on_off)
-      {
-        if(cnt_state_redLED >= LEDBLINK_ONTIME)
-        {
-          flag_blink_on_off = FALSE;
-          cnt_state_redLED = 0;
-          LED_OFF;
-        }
-      }
-      else
-      {
-        if(cnt_state_redLED >= LEDBLINK_OFFTIME)
-        {
-          if(cnt_blink_redLED < U8_MAX) cnt_blink_redLED++;
-          flag_blink_on_off = TRUE;
-          cnt_state_redLED = 0;
-          if(cnt_blink_redLED >= blink_redLED_times && !flag_blink_unlimited)
-          {
-            flag_blink_redLED = FALSE;
-            cnt_blink_redLED = 0;
-          }
-          else
-          {
-            LED_RED_ON;
-          }
-        }
-      }
-    }
-    if(flag_blink_greenLED)
-    {
-      if(cnt_state_greenLED < U16_MAX) cnt_state_greenLED++;
-      if(flag_blink_on_off)
-      {
-        if(cnt_state_greenLED >= LEDBLINK_ONTIME)
-        {
-          flag_blink_on_off = FALSE;
-          cnt_state_greenLED = 0;
-          LED_OFF;
-        }
-      }
-      else
-      {
-        if(cnt_state_greenLED >= LEDBLINK_OFFTIME)
-        {
-          if(cnt_blink_greenLED < U8_MAX) cnt_blink_greenLED++;
-          flag_blink_on_off = TRUE;
-          cnt_state_greenLED = 0;
-          if(cnt_blink_greenLED >= blink_greenLED_times && !flag_blink_unlimited)
-          {
-            flag_blink_greenLED = FALSE;
-            cnt_blink_greenLED = 0;
-          }
-          else
-          {
-            LED_GREEN_ON;
-          }
-        }
-      }
-    }
-    /* ======================================= */
-    TIM2_ClearITPendingBit(TIM2_IT_Update);        // clear TIM2 update interrupt flag
-  }
-  interrupt_status = 0;
+  
 }
 
 /**

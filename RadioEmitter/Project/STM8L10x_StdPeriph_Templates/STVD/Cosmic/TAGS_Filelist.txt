@@ -9,8 +9,6 @@
 ..\..\rf_send.h
 ..\..\stm8l10x_it.c
 ..\..\stm8l10x_it.h
-..\..\timeout.c
-..\..\timeout.h
 stm8_interrupt_vector.c
 ..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_clk.c
 ..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_exti.c
