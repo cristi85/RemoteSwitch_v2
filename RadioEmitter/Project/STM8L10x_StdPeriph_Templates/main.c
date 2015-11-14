@@ -61,10 +61,26 @@ void main(void)
     DELAY_STOP;
     disableInterrupts();
     if(btn_pressed == BUTTON1) {
-      RF_Send(RFCMD_HEATING_ON);
+      LED_GREEN_ON;
+      RF_Send(RFCMD_LOAD_ON);
+      LED_OFF;
+      DELAY50MS_START;
+      while(! DELAY_EXPIRED);
+      DELAY_STOP;
+      LED_GREEN_ON;
+      RF_Send(RFCMD_LOAD_ON);
+      LED_OFF;
     }
     else if(btn_pressed = BUTTON2) {
-      RF_Send(RFCMD_HEATING_OFF);
+      LED_GREEN_ON;
+      RF_Send(RFCMD_LOAD_OFF);
+      LED_OFF;
+      DELAY50MS_START;
+      while(! DELAY_EXPIRED);
+      DELAY_STOP;
+      LED_GREEN_ON;
+      RF_Send(RFCMD_LOAD_OFF);
+      LED_OFF;
     }
     enableInterrupts();
     

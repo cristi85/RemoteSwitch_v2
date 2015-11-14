@@ -7,8 +7,8 @@
 #define RFNODEID        (u8)0x56
 
 typedef enum {
-  RFCMD_HEATING_ON  = (u8)0x0F, 
-  RFCMD_HEATING_OFF = (u8)0xF0
+  RFCMD_LOAD_ON  = (u8)0x0F, 
+  RFCMD_LOAD_OFF = (u8)0xF0
 } RF_Cmd_TypeDef;
 
 typedef union

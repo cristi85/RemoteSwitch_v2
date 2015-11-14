@@ -189,7 +189,7 @@ PctWidth=1000000
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=7
+MRUHorzDockCY=0
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -736,7 +736,7 @@ MRUDockID=0
 MRUDockLeftPos=1
 MRUDockTopPos=-2
 MRUDockRightPos=284
-MRUDockBottomPos=710
+MRUDockBottomPos=700
 MRUFloatStyle=4
 MRUFloatXPos=-1
 MRUFloatYPos=0
@@ -753,7 +753,7 @@ MRUFloatCY=180
 MRUHorzDockCX=300
 MRUHorzDockCY=180
 MRUVertDockCX=283
-MRUVertDockCY=712
+MRUVertDockCY=702
 MRUDockingState=0
 DockingStyle=61440
 TypeID=0
@@ -770,7 +770,7 @@ MRUDockID=0
 MRUDockLeftPos=1
 MRUDockTopPos=5
 MRUDockRightPos=1680
-MRUDockBottomPos=197
+MRUDockBottomPos=207
 MRUFloatStyle=4
 MRUFloatXPos=-1
 MRUFloatYPos=0
@@ -785,7 +785,7 @@ PctWidth=1000000
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=1679
-MRUHorzDockCY=192
+MRUHorzDockCY=202
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -855,7 +855,7 @@ PctWidth=500000
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=192
+MRUHorzDockCY=202
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -1065,7 +1065,7 @@ PctWidth=666665
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=192
+MRUHorzDockCY=202
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -1100,7 +1100,7 @@ PctWidth=750000
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=192
+MRUHorzDockCY=202
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -1135,7 +1135,7 @@ PctWidth=800000
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=192
+MRUHorzDockCY=202
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -1615,7 +1615,7 @@ ptn_Child2=ChildFrames
 
 [WorkState_v1_2.Frames.MainFrame]
 WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPOFCAAAAABEAAAAAALAGAAAAAAOCAAAAA
-Title=ST Visual Develop - project.stw - [rf_send.c]
+Title=ST Visual Develop - project.stw - [main.c]
 
 [WorkState_v1_2.Frames.ChildFrames]
 ptn_Child1=Document-0
@@ -1627,6 +1627,9 @@ ptn_Child6=Document-5
 ptn_Child7=Document-6
 ptn_Child8=Document-7
 ptn_Child9=Document-8
+ptn_Child10=Document-9
+ptn_Child11=Document-10
+ptn_Child12=Document-11
 
 [WorkState_v1_2.Frames.ChildFrames.Document-0]
 ptn_Child1=ViewFrame-0
@@ -1635,8 +1638,8 @@ ptn_Child1=ViewFrame-0
 DocPathName=..\..\main.c
 DocumentString=
 DocTemplateIndex=0
-WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPCOPPPPPPAAAAAAAAAAAAAAAAPGEAAAAANNBAAAAA
-IsActiveChildFrame=False
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPCOPPPPPPAAAAAAAAAAAAAAAAPGEAAAAANNBAAAAA
+IsActiveChildFrame=True
 IsFrameVisible=True
 
 [WorkState_v1_2.Frames.ChildFrames.Document-1]
@@ -1646,8 +1649,8 @@ ptn_Child1=ViewFrame-0
 DocPathName=..\..\rf_send.c
 DocumentString=
 DocTemplateIndex=0
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPCOPPPPPPPKAAAAAAPKAAAAAALDFAAAAAOGCAAAAA
-IsActiveChildFrame=True
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPCOPPPPPPPKAAAAAAPKAAAAAALDFAAAAAOGCAAAAA
+IsActiveChildFrame=False
 IsFrameVisible=True
 
 [WorkState_v1_2.Frames.ChildFrames.Document-2]
@@ -1724,5 +1727,38 @@ DocPathName=..\..\stm8l10x_it.c
 DocumentString=
 DocTemplateIndex=0
 WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPCOPPPPPPLEAAAAAALEAAAAAAOIDAAAAAOACAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True
+
+[WorkState_v1_2.Frames.ChildFrames.Document-9]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_2.Frames.ChildFrames.Document-9.ViewFrame-0]
+DocPathName=..\..\rf_send.h
+DocumentString=
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPCOPPPPPPPKAAAAAAPKAAAAAALDFAAAAAFHCAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True
+
+[WorkState_v1_2.Frames.ChildFrames.Document-10]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_2.Frames.ChildFrames.Document-10.ViewFrame-0]
+DocPathName=..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h
+DocumentString=
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPCOPPPPPPIMAAAAAAIMAAAAAAEFFAAAAAOICAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True
+
+[WorkState_v1_2.Frames.ChildFrames.Document-11]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_2.Frames.ChildFrames.Document-11.ViewFrame-0]
+DocPathName=..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_tim3.c
+DocumentString=
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPCOPPPPPPIMAAAAAAIMAAAAAAKICAAAAALICAAAAA
 IsActiveChildFrame=False
 IsFrameVisible=True

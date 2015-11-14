@@ -28,7 +28,7 @@ FormatParameters=0
 [DebugState_v1-Debug.AddOn.St7Registers]
 ActiveTab=2
 [DebugState_v1-Debug.AddOn.St7PeripheralRegister]
-DisplayFormat=1
+DisplayFormat=2
 ShowPeriphAddress=0
 ShowRegisterAddress=1
 [DebugState_v1-Debug.AddOn.St7McuIcdConf]

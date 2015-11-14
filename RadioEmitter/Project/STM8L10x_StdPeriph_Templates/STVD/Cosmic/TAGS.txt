@@ -276,15 +276,16 @@ ClrBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1394;"	mac
 Config	..\..\config.c	3;"	function
 Config	..\..\config.h	4;"	prototype	signature:(void)
 DDR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	190;"	member	struct:GPIO_struct
+DELAY100MS_START	..\..\delay.h	25;"	macro
 DELAY20MS_START	..\..\delay.h	14;"	macro
-DELAY_CLEAR	..\..\delay.h	28;"	macro
-DELAY_EXPIRED	..\..\delay.h	27;"	macro
+DELAY_CLEAR	..\..\delay.h	41;"	macro
+DELAY_EXPIRED	..\..\delay.h	40;"	macro
 DELAY_SET	..\..\delay.h	12;"	macro
 DELAY_START	..\..\delay.h	13;"	macro
-DELAY_STOP	..\..\delay.h	23;"	macro
-DELAY_US	..\..\delay.h	36;"	macro
+DELAY_STOP	..\..\delay.h	36;"	macro
+DELAY_US	..\..\delay.h	49;"	macro
 DELAY_US_START	..\..\delay.h	6;"	macro
-DELAY_US_STOP	..\..\delay.h	26;"	macro
+DELAY_US_STOP	..\..\delay.h	39;"	macro
 DISABLE	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	155;"	enumerator	enum:__anon6
 DM	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1298;"	macro
 DM_BaseAddress	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1270;"	macro
@@ -565,7 +566,7 @@ GPIO_WriteBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_gpio.
 GPIO_struct	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	186;"	struct
 GTR	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1162;"	member	struct:USART_struct
 Goto_HALT	..\..\main.c	38;"	prototype	file:	signature:(void)
-Goto_HALT	..\..\main.c	76;"	function	file:
+Goto_HALT	..\..\main.c	93;"	function	file:
 HSIDivFactor	..\..\..\..\libraries\stm8l10x_stdperiph_driver\src\stm8l10x_clk.c	52;"	variable
 HSI_VALUE	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_clk.h	86;"	macro
 HWVERSION	..\..\board.h	6;"	macro
@@ -1021,8 +1022,8 @@ RESERVED1	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	326;"	m
 RESERVED2	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	327;"	member	struct:CLK_struct
 RESERVED3	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	329;"	member	struct:CLK_struct
 RESET	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	153;"	enumerator	enum:__anon5
-RFCMD_HEATING_OFF	..\..\rf_send.h	11;"	enumerator	enum:__anon1
-RFCMD_HEATING_ON	..\..\rf_send.h	10;"	enumerator	enum:__anon1
+RFCMD_LOAD_OFF	..\..\rf_send.h	11;"	enumerator	enum:__anon1
+RFCMD_LOAD_ON	..\..\rf_send.h	10;"	enumerator	enum:__anon1
 RFM_DATA	..\..\board.h	43;"	macro
 RFM_DATA_PIN	..\..\board.h	41;"	macro
 RFM_DATA_PORT	..\..\board.h	40;"	macro
@@ -2028,7 +2029,7 @@ USART_struct	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1151
 USE_STDPERIPH_DRIVER	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	51;"	macro
 VECTOR_ID	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1359;"	macro
 ValBit	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1402;"	macro
-WAIT_US_DELAY	..\..\delay.h	29;"	macro
+WAIT_US_DELAY	..\..\delay.h	42;"	macro
 WFE	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1286;"	macro
 WFE_BaseAddress	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1250;"	macro
 WFE_CR1_EXTI_EV0	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	763;"	macro
@@ -2104,7 +2105,7 @@ __STM8L10x_IRTIM_H	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x_
 __STM8L10x_IT_H	..\..\stm8l10x_it.h	30;"	macro
 _stext	..\..\stm8l10x_it.h	43;"	prototype	signature:(void)
 _vectab	stm8_interrupt_vector.c	15;"	variable
-assert_failed	..\..\main.c	96;"	function	signature:(uint8_t* file, uint32_t line)
+assert_failed	..\..\main.c	113;"	function	signature:(uint8_t* file, uint32_t line)
 assert_failed	..\..\stm8l10x_conf.h	74;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	..\..\stm8l10x_conf.h	72;"	macro
 assert_param	..\..\stm8l10x_conf.h	76;"	macro
@@ -2112,9 +2113,9 @@ bool	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	151;"	typede
 btn_pressed	..\..\stm8l10x_it.c	40;"	variable
 chksum	..\..\rf_send.c	7;"	variable	file:
 delay_4us	..\..\delay.c	35;"	function	signature:(u8 n_4us)
-delay_4us	..\..\delay.h	34;"	prototype	signature:(u8)
+delay_4us	..\..\delay.h	47;"	prototype	signature:(u8)
 delay_ms	..\..\delay.c	11;"	function	signature:(u16 n_ms)
-delay_ms	..\..\delay.h	33;"	prototype	signature:(u16 n_ms)
+delay_ms	..\..\delay.h	46;"	prototype	signature:(u16 n_ms)
 disableInterrupts	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1314;"	macro
 disableInterrupts	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1324;"	macro
 disableInterrupts	..\..\..\..\libraries\stm8l10x_stdperiph_driver\inc\stm8l10x.h	1335;"	macro

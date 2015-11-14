@@ -3,11 +3,18 @@
 void Config()
 {
   //System clock at power up is HSI/8 = 16MHz/8 = 2MHz
-  //CLK_SYSCLKDivConfig(CLK_SYSCLKDiv_1);  //set HSI/4 = 4MHz SysClk to Core and Memory, minimum clock = 125KHz for CLK_SYSCLKDiv_128
   
   //Configure external interrupts - BTN1 and BTN2 presses
   EXTI_SetPinSensitivity(EXTI_Pin_1, EXTI_Trigger_Falling_Low);
   EXTI_SetPinSensitivity(EXTI_Pin_2, EXTI_Trigger_Falling_Low);
+
+  /*TIM3_TimeBaseInit(TIM3_Prescaler_128,
+                    TIM3_CounterMode_Up,
+                    313);*/
+  //TIM3_UpdateDisableConfig(DISABLE);
+  //TIM3_UpdateRequestConfig(TIM3_UpdateSource_Global);
+  //TIM3_ARRPreloadConfig(DISABLE);
+  //TIM3_ITConfig(TIM3_IT_Update | TIM3_IT_CC1 | TIM3_IT_CC2 | TIM3_IT_Trigger | TIM3_IT_Break, DISABLE);
 
   /* Input FL IT - onboard Button, external pull-up */
   GPIO_Init(BTN1_PORT, BTN1_PIN, GPIO_Mode_In_FL_IT);

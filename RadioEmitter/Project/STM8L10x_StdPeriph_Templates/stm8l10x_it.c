@@ -138,7 +138,7 @@ INTERRUPT_HANDLER(EXTI1_IRQHandler, 9)
        it is recommended to set a breakpoint on the following instruction.
     */
   RFM_ON;
-  LED_GREEN_ON;
+  //LED_GREEN_ON;
   DELAY20MS_START;
   if(!BTN1_STATE)
   {
@@ -164,7 +164,7 @@ INTERRUPT_HANDLER(EXTI2_IRQHandler, 10)
        it is recommended to set a breakpoint on the following instruction.
     */
   RFM_ON;
-  LED_GREEN_ON;
+  //LED_GREEN_ON;
   DELAY20MS_START;
   if(!BTN1_STATE)
   {

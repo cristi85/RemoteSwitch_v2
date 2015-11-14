@@ -10,21 +10,48 @@
                             TIM4->CR1 |= TIM4_CR1_CEN;                          \
                            }
 #define DELAY_SET(x)       TIM4->ARR = (u8)x;
-#define DELAY_START        TIM4->CR1 |= TIM4_CR1_CEN;
-#define DELAY20MS_START    {CLK_PeripheralClockConfig(CLK_Peripheral_TIM4, ENABLE);  \
-                             /* Init TIM4 to give Update event after 20.48ms */      \
-                             /* Increment TIM4 every 1.024ms (for 2MHz clock) */     \
-                             TIM4->PSCR = (u8)(TIM4_Prescaler_2048);                 \
-                             TIM4->ARR = 20;  /* 20 * 1.024ms = 20.48 ms */          \
-                             TIM4->CNTR = 0;                                         \
-                             TIM4->SR1 &= (u8)(~TIM4_IT_Update);                     \
-                             TIM4->CR1 |= TIM4_CR1_CEN;                              \
-                            }
-#define DELAY_STOP        { TIM4->CR1 &= (u8)(~TIM4_CR1_CEN);                       \
-                            CLK_PeripheralClockConfig(CLK_Peripheral_TIM4, DISABLE);  /* Stop TIM4 peripheral clock */ \
+#define DELAY_START        TIM4->CR1 |= TIM4_CR1_CEN; 
+#define DELAY20MS_START    { CLK->PCKENR |= CLK_Peripheral_TIM3;                                 \
+                             TIM3->CR1 = (u8)0x00;                                               \
+                             TIM3->PSCR  = TIM3_Prescaler_128;   /*64us step*/                   \
+                             TIM3->ARRH  = (u8)0x01;                                             \
+                             TIM3->ARRL  = (u8)0x39;             /* 0x139=313*64us=20.032ms */   \
+                             TIM3->CNTRH = (u8)0x00;                                             \
+                             TIM3->CNTRL = (u8)0x00;                                             \
+                             TIM3->EGR = 0x01;                                                   \
+                             TIM3->BKR = TIM_BKR_RESET_VALUE;                                    \
+                             TIM3->SR1 = TIM_SR1_RESET_VALUE;                                    \
+                             TIM3->CR1 = TIM_CR1_CEN;                                            \
+                           }
+#define DELAY50MS_START    { CLK->PCKENR |= CLK_Peripheral_TIM3;                                 \
+                             TIM3->CR1 = (u8)0x00;                                               \
+                             TIM3->PSCR  = TIM3_Prescaler_128;   /*64us step*/                   \
+                             TIM3->ARRH  = (u8)0x03;                                             \
+                             TIM3->ARRL  = (u8)0x01;             /* 0x301=769*64us=49.216ms */ \
+                             TIM3->CNTRH = (u8)0x00;                                             \
+                             TIM3->CNTRL = (u8)0x00;                                             \
+                             TIM3->EGR = 0x01;                                                   \
+                             TIM3->BKR = TIM_BKR_RESET_VALUE;                                    \
+                             TIM3->SR1 = TIM_SR1_RESET_VALUE;                                    \
+                             TIM3->CR1 = TIM_CR1_CEN;                                            \
+                           }
+#define DELAY100MS_START    {CLK->PCKENR |= CLK_Peripheral_TIM3;                                 \
+                             TIM3->CR1 = (u8)0x00;                                               \
+                             TIM3->PSCR  = TIM3_Prescaler_128;   /*64us step*/                   \
+                             TIM3->ARRH  = (u8)0x06;                                             \
+                             TIM3->ARRL  = (u8)0x1B;             /* 0x61B=1563*64us=100.032ms */ \
+                             TIM3->CNTRH = (u8)0x00;                                             \
+                             TIM3->CNTRL = (u8)0x00;                                             \
+                             TIM3->EGR = 0x01;                                                   \
+                             TIM3->BKR = TIM_BKR_RESET_VALUE;                                    \
+                             TIM3->SR1 = TIM_SR1_RESET_VALUE;                                    \
+                             TIM3->CR1 = TIM_CR1_CEN;                                            \
+                           }
+#define DELAY_STOP        { TIM3->CR1 &= (u8)(~TIM_CR1_CEN);                                             \
+                            /*CLK->PCKENR &= (u8)(~CLK_Peripheral_TIM3);*/  /* Stop TIM3 peripheral clock */ \
                           }
 #define DELAY_US_STOP     {TIM4->CR1 &= (u8)(~TIM4_CR1_CEN);}
-#define DELAY_EXPIRED     ((TIM4->SR1 & TIM4_IT_Update) != 0)
+#define DELAY_EXPIRED     ((TIM3->SR1 & TIM_SR1_UIF) != 0)
 #define DELAY_CLEAR       (TIM4->SR1 &= (u8)(~TIM4_IT_Update))
 #define WAIT_US_DELAY     {while(!DELAY_EXPIRED); \
                            DELAY_US_STOP;         \
