@@ -1,0 +1,90 @@
+if(TIM3_GetITStatus(TIM3_IT_CC1))
+    {
+      RF_PulsePeriod = TIM3_GetCapture1();
+      if(flag_RF_StartRec)
+      {
+        if(idx_temp2 < RFRECORDLEN)
+        {
+          temp2[idx_temp2++] = RF_PulsePeriod;
+        }
+        else
+        {
+          debug = debug;
+        }
+      }
+      switch(RF_rcvState)
+      {
+        case RF_RCVSTATE_WAITSTART: 
+        {
+          // wait for a start pulse (4ms)
+          if(RF_PulsePeriod > (u16)1100 && RF_PulsePeriod < (u16)1300)
+          {
+            RF_bits = 0;
+            RF_bytes = 0;
+            RF_data = 0;
+            RF_rcvState = RF_RCVSTATE_REC8BITS;
+          }
+          break;
+        }
+        case RF_RCVSTATE_REC8BITS:
+        {
+          // now we had a start pulse, record 8 bits
+          if(RF_PulsePeriod >= 1100) 
+          {
+            // unexpected start pulse, reset data recording
+            RF_bits = 0;
+            RF_bytes = 0;
+            RF_data = 0;
+            flag_RF_StartRec = FALSE;
+          }
+          else
+          {
+            if(RF_PulsePeriod >= RF_MIDDLEBIT)   // 0 bit = 500uS, 1 bit = 750uS
+            {
+              // record 1 bit, else a 0 will be shifted and therefore recorded
+              RF_data |= 0x01;
+            }
+            RF_bits++;
+            if(RF_bits < 8) RF_data <<= 1;
+            if(RF_bits == 8)
+            {
+              u8 i;
+              RcvRFmsg.RFmsgarray[RF_bytes++] = RF_data;
+              RF_bits = 0;
+              RF_data = 0;
+              if(RF_bytes == 2)
+              {
+                if(RcvRFmsg.RFmsgmember.RFsyncValue != RFSYNCVAL)
+                {
+                  /* not the expected package */
+                  flag_RF_StartRec = FALSE;
+                  RF_rcvState = RF_RCVSTATE_WAITSTART;
+                }
+                else
+                {
+                  flag_RF_StartRec = TRUE;
+                  idx_temp2 = 0;
+                }
+              }
+              if(RF_bytes == RFSEND_DATALEN) 
+              {
+                RFrcvChksum = 0;
+                for(i=0;i<RFSEND_DATALEN-1;i++)
+                {
+                  RFrcvChksum += RcvRFmsg.RFmsgarray[i];
+                }
+                RFrcvChksum = (u8)(~RFrcvChksum);
+                if(RFrcvChksum == RcvRFmsg.RFmsgmember.RFmsgCHKSUM)
+                {
+                  RFbytesReady = TRUE;  // set new RF data available flag
+                }
+                flag_RF_StartRec = FALSE;
+                RF_rcvState = RF_RCVSTATE_WAITSTART;
+              }
+            }
+          }
+          break;
+        }
+        default: break;
+      }
+    }

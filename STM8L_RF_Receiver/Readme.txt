@@ -1,0 +1,6 @@
+STM8L101F2
+LNK304
+MOC3063
+BT136
+RFM83CL 433Mhz
+Manchester encoding
