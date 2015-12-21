@@ -144,7 +144,7 @@ void main(void)
   RST_ClearFlag(RST_FLAG_POR_PDR | RST_FLAG_SWIMF | RST_FLAG_ILLOPF | RST_FLAG_IWDGF);
   while(ISBLINKING_REDLED);
   program_status = 4;
-  HBRIDGE_OFF;
+  LIGHT_OFF;
   Timeout_SetTimeout1(HBRIDGE_CHARGE_TIME);
   
   IWDG_Enable();
@@ -239,7 +239,7 @@ void main(void)
       {
         if(Timeout_IsTimeout1())
         {
-          HBRIDGE_OFF;
+          LIGHT_OFF;
           /* set timeout for H-Bridge capacitor to charge */
           Timeout_SetTimeout1(HBRIDGE_CHARGE_TIME);
           BLINKSTOP_GREENLED;
