@@ -5,7 +5,7 @@ RF remote light switch with 10mW 433.92MHz TX
 - STM8L101F2 (ST 8bit low cost low power micro) @ 3.0V
 - Hope RF RFM85W 433.92MHz emitter
 - CR2032 battery operated
-- Manchester decoding
+- Manchester encoding
 
 # RECEIVER
 - STM8L101F2 (ST 8bit low cost low power micro) @ 3.3V
