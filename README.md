@@ -12,5 +12,5 @@ RF remote light switch with 10mW 433.92MHz TX
 - LNK304 (non isolated buck coverter 230VAC to 9V DC)
 - MOC3063 (optotriac)
 - BT136 (triac)
-- RFM83CL 433.92Mhz
+- Hope RF RFM83CL 433.92Mhz receiver
 - Manchester decoding
