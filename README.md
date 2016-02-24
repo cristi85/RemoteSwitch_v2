@@ -1,7 +1,16 @@
 # RemoteSwitch_v2
-RF remote light switch with longer range 433.92MHz radio modules
-For the moment a test version: 
-- emitter with STM8L101F2 @ 3.3V and a 433Mhz emitter module
-- receiver with STM8S003 @ 5V and Aurel AC-RX2/CS 433Mhz OOK receiver module
+RF remote light switch with 10mW 433.92MHz TX
 
-In the final version, both emitter and receiver will have STM8S003 @ 5V.
+# EMITTER
+- STM8L101F2 (ST 8bit low cost low power micro) @ 3.0V
+- Hope RF RFM85W 433.92MHz emitter
+- CR2032 battery operated
+- Manchester decoding
+
+# RECEIVER
+- STM8L101F2 (ST 8bit low cost low power micro) @ 3.3V
+- LNK304 (non isolated buck coverter 230VAC to 9V DC)
+- MOC3063 (optotriac)
+- BT136 (triac)
+- RFM83CL 433.92Mhz
+- Manchester decoding
